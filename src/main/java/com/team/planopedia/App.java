@@ -1,4 +1,4 @@
-package com.team.planit;
+package com.team.planopedia;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

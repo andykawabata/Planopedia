@@ -1,4 +1,4 @@
-package com.team.planit.controllers;
+package com.team.planopedia.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
