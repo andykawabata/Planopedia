@@ -5,6 +5,7 @@ import com.team.planopedia.modelsAndServices.restaurant.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ResultController {
@@ -13,7 +14,7 @@ public class ResultController {
     RestaurantService restaurantService;
     
     @GetMapping("/result")
-    public String result(/*parameters*/){
+    public String result(@RequestParam String name){
         
         Restaurant restaurant = restaurantService.generateRestaurant(/*parameters*/);
         
