@@ -15,7 +15,7 @@ public class ResultController {
     @GetMapping("/result")
     public String result(/*parameters*/){
         
-        Restaurant restaurant = restaurantService.generateRestaurant(/*parameters*/);
+        Restaurant restaurant = restaurantService.generateRestaurant(null, null, null, 0);
         
         return "home";
     }
