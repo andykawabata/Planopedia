@@ -128,4 +128,11 @@ public class BasicInfo {
     public void setStarRating(String starRating) {
         this.starRating = starRating;
     }
+
+    @Override
+    public String toString() {
+        return "BasicInfo{" + "locationName=" + locationName + ", fullAddress=" + fullAddress + ", phoneNumber=" + phoneNumber + ", priceRating=" + priceRating + ", starRating=" + starRating + '}';
+    }
+    
+    
 }

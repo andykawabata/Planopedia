@@ -14,9 +14,11 @@ public class ResultController {
     RestaurantService restaurantService;
     
     @GetMapping("/result")
-    public String result(@RequestParam String name){
+    public String result(){
         
-        Restaurant restaurant = restaurantService.generateRestaurant(/*parameters*/);
+        Restaurant restaurant = restaurantService.generateRestaurant("mycity", "12345", "Italian", 1);
+        
+        System.out.println(restaurant.getBasicInfo().toString());
         
         return "home";
     }
