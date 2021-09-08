@@ -20,6 +20,6 @@ public class ResultController {
         
         System.out.println(restaurant.getBasicInfo().toString());
         
-        return "home";
+        return "result";
     }
 }

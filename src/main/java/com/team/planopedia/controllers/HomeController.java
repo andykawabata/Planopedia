@@ -10,4 +10,9 @@ public class HomeController {
     public String homeScreen(){
         return "home";
     }
+    
+    @GetMapping("/form")
+    public String fakeForm(){
+        return "form";
+    }
 }
