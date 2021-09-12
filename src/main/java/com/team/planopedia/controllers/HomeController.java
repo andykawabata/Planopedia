@@ -13,6 +13,6 @@ public class HomeController {
     
     @GetMapping("/form")
     public String fakeForm(){
-        return "form";
+        return "example-form";
     }
 }

@@ -18,22 +18,16 @@ public class ResultController {
     @GetMapping("/result")
     public String result(Model model,
                          @RequestParam("city") String city,                 //This variables are obtained via GET request from form page.
-                         @RequestParam("zipcode") String zipcode,
+                         @RequestParam("zip") String zip,
                          @RequestParam("cuisine") String cuisine,
-                         @RequestParam("numpeople") String numPeople)
+                         @RequestParam("numPeople") String numPeople)
     {
 
 
-        Restaurant restaurant = restaurantService.generateRestaurant(city, zipcode, cuisine, Integer.parseInt(numPeople));
-
-        System.out.println(city);
-        System.out.println(zipcode);
-        System.out.println(cuisine);
-        System.out.println(numPeople);
-
+        Restaurant restaurant = restaurantService.generateRestaurant(city, zip, cuisine, Integer.parseInt(numPeople));
 
         model.addAttribute("restaurant",restaurant);   //adding the Restaurant object to a model which is accessible in the HTML pages.
         
-        return "result";
+        return "example-result";
     }
 }
