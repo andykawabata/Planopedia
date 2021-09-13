@@ -16,6 +16,18 @@ public class Restaurant {
         this.reviews = reviews;
         this.directions = directions;
     }
+
+    public BasicInfo getBasicInfo() {
+        return basicInfo;
+    }
+
+    public Reviews getReviews() {
+        return reviews;
+    }
+
+    public Directions getDirections() {
+        return directions;
+    }
     
     
     
