@@ -1,11 +1,13 @@
-package com.team.planopedia.API.interfaces;
-
 /**
- * Interface meant to create a standard calling for the application
- * Last updated August 31, 2021
+ * Interface meant to create a standard calling for the application 
+ * Last updated September 14, 2021
+ *
  * @Author Nimra Sami
  * @Author Arturo Serdan
  */
+package com.team.planopedia.API.interfaces;
+import java.util.ArrayList;
+import java.util.*;
 
 public interface APIFoodInterface {
     /**
@@ -14,5 +16,5 @@ public interface APIFoodInterface {
      * @param _limit The
      * @return Restaurant data
      */
-    String [] getRestaurants(String _term, String _city, int _limit);
+    ArrayList<Map<String, String>> getRestaurants(String _term, String _city, int _limit);
 }
