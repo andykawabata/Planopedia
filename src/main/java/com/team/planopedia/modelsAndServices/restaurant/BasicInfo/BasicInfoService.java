@@ -1,5 +1,6 @@
 package com.team.planopedia.modelsAndServices.restaurant.BasicInfo;
 
+import com.team.planopedia.API.adapters.RestaurantApiAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,18 +15,17 @@ public class BasicInfoService {
 
     
     public BasicInfo chooseSingleRestaurant(String city, String zip, String cuisine, int numPeople){
-
-        //apiAdapter.getBasicInfo(Need API classes for this);
-        //Map<String, String> BasicInfoMap = apiAdapter.getBasicInfo(Need API classes for this);
         
+        RestaurantApiAdapter api = new RestaurantApiAdapter();
+        int numRestaurants = 20;
         
-        List<Map<String, String>> potentialRestaurants = this.fakeApiRestaurantCall(city, zip, cuisine);
+        List<Map<String, String>> potentialRestaurants = api.getRestaurants(cuisine, city, numRestaurants);
         
         Map<String, String> chosenRestaurant = this.pickRestaurantFromList(potentialRestaurants);
         
-        String locationName = chosenRestaurant.get("name");
+        String locationName = chosenRestaurant.get("restaurantName");
         String fullAddress = chosenRestaurant.get("address");
-        String phoneNumber = chosenRestaurant.get("phone");
+        String phoneNumber = chosenRestaurant.get("phoneNumber");
         String priceRating = chosenRestaurant.get("price");
         String starRating = chosenRestaurant.get("rating");
 
@@ -37,49 +37,5 @@ public class BasicInfoService {
         
         return potentialRestaurants.get(0);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ////////////////////// DUMMY DATA ////////////////////////////////
-    
-    
-    public List<Map<String, String>> fakeApiRestaurantCall(String city, String zip, String cuisine){
-        
-        Map<String, String> dummyRestaurant1 = new HashMap<>();
-        dummyRestaurant1.put("name", "Arby's");
-        dummyRestaurant1.put("address", "123 Road Street");
-        dummyRestaurant1.put("phone", "555-5555");
-        dummyRestaurant1.put("price", "$$");
-        dummyRestaurant1.put("rating", "4/5");
-        
-        Map<String, String> dummyRestaurant2 = new HashMap<>();
-        dummyRestaurant2.put("name", "Printworks");
-        dummyRestaurant2.put("address", "32 Hill Road");
-        dummyRestaurant2.put("phone", "555-5555");
-        dummyRestaurant2.put("price", "$$");
-        dummyRestaurant2.put("rating", "4/5");
-        
-         Map<String, String> dummyRestaurant3 = new HashMap<>();
-        dummyRestaurant3.put("name", "Taco's Bell");
-        dummyRestaurant3.put("address", "2 Cheese Street");
-        dummyRestaurant3.put("phone", "555-5555");
-        dummyRestaurant3.put("price", "$");
-        dummyRestaurant3.put("rating", "3/5");
-        
-        List<Map<String, String>> dummyRestaurantList = new ArrayList<Map<String, String>>();
-        dummyRestaurantList.add(dummyRestaurant1);
-        dummyRestaurantList.add(dummyRestaurant2);
-        dummyRestaurantList.add(dummyRestaurant3);
-        
-        return dummyRestaurantList;
-        
-    }
-    
     
 }

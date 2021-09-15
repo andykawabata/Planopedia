@@ -9,6 +9,7 @@
 
 package com.team.planopedia.API.translators;
 import com.team.planopedia.API.interfaces.APIFoodInterface;
+import com.team.planopedia.API.interfaces.APIReviewInterface;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,7 +22,7 @@ import org.json.*;
 
 
 
-public class YelpAPI implements APIFoodInterface {
+public class YelpAPI implements APIFoodInterface, APIReviewInterface {
 
     private static final String baseUrlYelp = "https://api.yelp.com";
     private static final String callActionYelpRestaurantSearch = "/v3/businesses/search?";
