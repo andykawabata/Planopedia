@@ -332,49 +332,50 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="contact-form-wrapper">
-                            <form action="assets/php/contact.php" method="POST">
+                            <form action="/result" method="GET">
                                 <div class="row justify-content-center">
                                     <div class="col-md-6">
                                         <div class="single-input">
-                                            <input type="text" id="name" name="name" class="form-input" placeholder="Name">
-                                            <i class="lni lni-calendar"></i>
+                                          <!--  <input type="text" id="name" name="planName" class="form-input" placeholder="Name">
+                                            <i class="lni lni-calendar"></i> -->
+                                        </div>
+                                        <div class="single-input">
+                                          <input type="text" id="name" name="city" class="form-input" placeholder="City">
+                                            
+                                        </div>
+										<div class="single-input">
+                                          <input type="text" id="name" name="zip" class="form-input" placeholder="ZIP">
+                                            
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="single-input">
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Cuisine
-                                                        <span class="caret"></span></button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="#">African</a></li>
-                                                        <li><a href="#">Brazilian</a></li>
-                                                        <li><a href="#">Chinese</a></li>
-                                                        <li><a href="#">Diner</a></li>
-                                                        <li><a href="#">Ethiopian</a></li>
-                                                        <li><a href="#">French</a></li>
-                                                        <li><a href="#">German</a></li>
-                                                        <li><a href="#">Hungarian</a></li>
-                                                        <li><a href="#">Icelandic</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <label for="cuisine">Cuisine:</label>
+                                        	<select class="form-select" name="cuisine">
+                                                        <option value="African">African</option>
+                                                        <option value="Brazilian">Brazilian</option>
+                                                        <option value="Chinese">Chinese</option>
+                                                        <option value="Diner">Diner</option>
+                                                        <option value="Ethiopian">Ethiopian</option>
+                                                        <option value="French">French</option>
+                                                        <option value="German">German</option>
+                                                        <option value="Hungarian">Hungarian</option>
+                                                        <option value="Icelandic">Icelandic</option>
+                                             </select>
+                                       	</div>
+                                        <p>&nbsp;</p>
                                         <div class="col-md-6">
                                             <div class="single-input">
-                                                <div class="dropdown">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Number of Guests
-                                                        <span class="caret"></span></button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a href="#">1</a></li>
-                                                        <li><a href="#">2</a></li>
-                                                        <li><a href="#">3</a></li>
-                                                        <li><a href="#">4</a></li>
-                                                        <li><a href="#">5</a></li>
-                                                        <li><a href="#">6</a></li>
-                                                        <li><a href="#">7</a></li>
-                                                        <li><a href="#">8</a></li>
-                                                        <li><a href="#">9</a></li>
-                                                    </ul>
-                                                </div>
+                                            	<label for="numPeople">Number of Guests:</label>
+                                            	<select class="form-select" name="numPeople">                                            	
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                    </select>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
