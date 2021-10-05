@@ -19,4 +19,15 @@ public class API_Keys {
 
         return api_key;
     }
+    
+        /**
+     * Method used to store the weather API (openweathermap) key 
+     *
+     * @return API key for the weather API
+     */
+    public static String openWeatherMapAPI() {
+        String api_key = "85cbeb5a131f1fa93c91d16c8ecd96fe";
+
+        return api_key;
+    }
 }
