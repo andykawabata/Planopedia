@@ -28,6 +28,7 @@ public class ResultController {
 
         model.addAttribute("restaurant",restaurant);   //adding the Restaurant object to a model which is accessible in the HTML pages.
         
-        return "example-result";
+        return "result";
     }
+    
 }
