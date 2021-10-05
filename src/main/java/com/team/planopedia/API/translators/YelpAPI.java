@@ -33,7 +33,7 @@ public class YelpAPI implements APIFoodInterface, APIReviewInterface {
      * Method that makes a API call to the Yelp API for a list of restaurants in
      * the location given by the user
      *
-     * @param _term breakfast, lunch, or dinner, etc.
+     * @param _term breakfast, lunch, or dinner, etc. - Must not contain spaces 
      * @param _city city where user is located
      * @param _limit search limit chosen by the user
      * @return array values
@@ -201,9 +201,9 @@ public class YelpAPI implements APIFoodInterface, APIReviewInterface {
      * Method that makes a API call to the Yelp API to search for a specific restaurant given
      * the name, city, and the number of results wanted
      *
-     * @param _restaurantName breakfast, lunch, or dinner, etc.
-     * @param _city city where user is located
-     * @param _limit search limit chosen by the user
+     * @param _restaurantName breakfast, lunch, or dinner, etc. - MUST NOT CONTAIN SPACES 
+     * @param _city city where user is located - can be zip or city name
+     * @param _limit search limit chosen by the user 
      * @return array values
      */
     @Override

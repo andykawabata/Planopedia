@@ -32,7 +32,7 @@ public class OpenWeatherMapAPI implements WeatherAPIInterface {
      * an Array String
      *
      * @param _zipCode
-     * @param _country
+     * @param _country - for United States, use "us"
      * @return weatherInf
      */
     @Override
