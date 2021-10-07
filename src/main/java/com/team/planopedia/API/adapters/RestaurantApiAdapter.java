@@ -17,6 +17,11 @@ public class RestaurantApiAdapter implements APIFoodInterface {
     public ArrayList<Map<String, String>> getRestaurants(String _term, String _city, int _limit) {
         return restaurantTranslator.getRestaurants(_term, _city, _limit);
     }
+
+    @Override
+    public ArrayList<Map<String, String>> getRestaurantSearchByName(String _restaurantName, String _city, int _limit) {
+        return restaurantTranslator.getRestaurantSearchByName(_restaurantName, _city, _limit);
+    }
     
     
     
