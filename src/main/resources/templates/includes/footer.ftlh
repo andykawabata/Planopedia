@@ -7,7 +7,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
                         <div class="logo">
-                            <a href="#0"> <img src="assets/img/logo/logo.svg" alt=""> </a>
+                            <a href="#0"> <img src="assets/img/logo/planopedia_blau.svg" alt=""> </a>
                         </div>
                         <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nulla placerat amet amet congue.</p>
                         <ul class="socials">
