@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
 <#include "/includes/head.ftlh">
 <#include "/includes/header-nonindex.ftlh">
 <body>
@@ -9,5 +11,6 @@
         <p><b>Price:</b> ${restaurant.basicInfo.priceRating}</p>
         <p><b>Rating:</b> ${restaurant.basicInfo.starRating}</p>
     </div>
-</body>
 <#include "/includes/footer.ftlh">
+</body>
+</html>

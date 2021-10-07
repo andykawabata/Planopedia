@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
 <#include "/includes/head.ftlh">
 <#include "/includes/preloader.ftlh">
 <#include "/includes/header-index.ftlh">
@@ -720,3 +722,5 @@
         <!-- ========================= clients-logo end ========================= -->
 
 <#include "/includes/footer.ftlh">
+</body>
+</html>
