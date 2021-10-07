@@ -3,6 +3,7 @@ package com.team.planopedia.dao;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 
 @Entity
@@ -15,7 +16,17 @@ public class User {
     private String userName;
     private String googleEmail;
 
+    //one user can have many plans, to get all plans for the user
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name="userId")
+    private ArrayList<Plan> plans = new ArrayList<>();
 
+    /**
+     * Constructors, getters and setters
+     */
     public  User(){};
 
     public User(Long userId, String userName, String email) {
@@ -25,13 +36,12 @@ public class User {
         //this.providerID = providerID;
     }
 
-    public void setUid(Long uid) {
-        this.userId = uid;
+    public Long getUserId() {
+        return userId;
     }
 
-
-    public Long getUid() {
-        return userId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
@@ -42,12 +52,25 @@ public class User {
         this.userName = userName;
     }
 
-    public String getgoogleEmail() {
+    public String getGoogleEmail() {
         return googleEmail;
     }
 
-    public void setgoogleEmail(String googleEmail) {
+    public void setGoogleEmail(String googleEmail) {
         this.googleEmail = googleEmail;
+    }
+
+    /**
+     * getPlans()
+     * get all the user plans
+     * @return
+     */
+    public ArrayList<Plan> getPlans() {
+        return plans;
+    }
+
+    public void setPlans(ArrayList<Plan> plans) {
+        this.plans = plans;
     }
 }
 

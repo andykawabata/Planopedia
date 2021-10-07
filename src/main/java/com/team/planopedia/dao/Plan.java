@@ -1,18 +1,28 @@
 package com.team.planopedia.dao;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "Plan")
 public class Plan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long planId;
     private Long userId;
-    private Long restaurantInfoId;
+    //private Long restaurantInfoId;
 
+    /**
+     * one to one relation,
+     * configure the name of the column in the plan table that maps to the primary key
+     * in the restaurantInfo table.
+     */
+    @OneToOne
+    @JoinColumn(name = "restaurantInfoId", referencedColumnName = "planId")
+    private RestaurantInfo restaurantInfo;
+
+    /**
+     * Constructors, getters and setters
+     */
     public Plan() {
     }
 
@@ -32,11 +42,11 @@ public class Plan {
         this.userId = userId;
     }
 
-    public Long getRestaurantInfoId() {
-        return restaurantInfoId;
+    public RestaurantInfo getRestaurantInfo() {
+        return restaurantInfo;
     }
 
-    public void setRestaurantInfoId(Long restaurantInfoId) {
-        this.restaurantInfoId = restaurantInfoId;
+    public void setRestaurantInfo(RestaurantInfo restaurantInfo) {
+        this.restaurantInfo = restaurantInfo;
     }
 }
