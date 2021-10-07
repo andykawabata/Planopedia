@@ -14,6 +14,9 @@ public class RestaurantInfo {
     private String restaurantZip;
 
 
+    /**
+     * Constructors, getters and setters
+     */
     public RestaurantInfo() {
 
     }

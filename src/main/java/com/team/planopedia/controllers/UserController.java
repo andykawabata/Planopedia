@@ -21,7 +21,7 @@ public class UserController {
     public String CreateNewUser(){
         User user = new User();
         user.setUserName("");
-        user.setgoogleEmail("");
+        user.setGoogleEmail("");
         userRepository.save(user);
         return "save: "+user;
 
