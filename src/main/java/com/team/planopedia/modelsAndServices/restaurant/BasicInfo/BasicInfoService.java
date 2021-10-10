@@ -28,8 +28,10 @@ public class BasicInfoService {
         String phoneNumber = chosenRestaurant.get("phoneNumber");
         String priceRating = chosenRestaurant.get("price");
         String starRating = chosenRestaurant.get("rating");
+        String restaurantId = chosenRestaurant.get("restaurantID");
 
-        return new BasicInfo(locationName, fullAddress, phoneNumber, priceRating, starRating);
+        
+        return new BasicInfo(locationName, fullAddress, phoneNumber, priceRating, starRating, restaurantId);
 
     }
     
