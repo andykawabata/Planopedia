@@ -4,6 +4,7 @@ package com.team.planopedia.dao;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -22,7 +23,7 @@ public class User {
             orphanRemoval = true
     )
     @JoinColumn(name="userId")
-    private ArrayList<Plan> plans = new ArrayList<>();
+    private List<Plan> plans = new ArrayList<>();
 
     /**
      * Constructors, getters and setters
@@ -65,11 +66,11 @@ public class User {
      * get all the user plans
      * @return
      */
-    public ArrayList<Plan> getPlans() {
+    public List<Plan> getPlans() {
         return plans;
     }
 
-    public void setPlans(ArrayList<Plan> plans) {
+    public void setPlans(List<Plan> plans) {
         this.plans = plans;
     }
 }
