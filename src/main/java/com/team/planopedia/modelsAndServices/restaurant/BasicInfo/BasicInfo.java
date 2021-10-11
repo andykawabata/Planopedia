@@ -14,6 +14,7 @@ public class BasicInfo {
     private String phoneNumber;
     private String priceRating;
     private String starRating;
+    private String restaurantId;
 
     public BasicInfo(){
 
@@ -27,14 +28,14 @@ public class BasicInfo {
      * @param priceRating String containing plan's price rating (Format: "$", "$$", or "$$$").
      * @param starRating String containing plan's overall rating (Format: "#/#").
      */
-    public BasicInfo(String locationName, String fullAddress, String phoneNumber, String priceRating, String starRating) {
+    public BasicInfo(String locationName, String fullAddress, String phoneNumber, String priceRating, String starRating, String restaurantId) {
         this.locationName = locationName;
         this.fullAddress = fullAddress;
         this.phoneNumber = phoneNumber;
         this.priceRating = priceRating;
         this.starRating = starRating;
+        this.restaurantId = restaurantId;
     }
-
     /*-----------------Getters------------------------*/
 
     /**
@@ -79,6 +80,10 @@ public class BasicInfo {
      */
     public String getStarRating() {
         return starRating;
+    }
+
+    public String getRestaurantId() {
+        return restaurantId;
     }
 
 
