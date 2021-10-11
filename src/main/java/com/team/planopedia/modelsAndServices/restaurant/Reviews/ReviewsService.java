@@ -21,7 +21,6 @@ public class ReviewsService {
         //call to API
         List<Map<String, String>> reviewList = api.getRestaurantReviews(restaurantId);
 
-        
         Map<String, SingleReview> chosenReviews = this.chooseGoodAndBadReviews(reviewList);
         
         SingleReview goodReview = chosenReviews.get("goodReview");
@@ -45,30 +44,5 @@ public class ReviewsService {
         reviewMap.put("badReview", badReview);
         
         return reviewMap;
-    }
-    
-    
-    
-    
-    
-    /////////////////////////// DUMMY DATA  //////////////////////////////////////
-    
-    private List<Map<String, String>> getReviewsByRestaurantName(String restaurantName){
-        
-        Map<String, String> dummyReview1 = new HashMap<>();
-        dummyReview1.put("rating", "1");
-        dummyReview1.put("text", "This place is bad!");
-        dummyReview1.put("date", "12-10-20");
-        
-        Map<String, String> dummyReview2 = new HashMap<>();
-        dummyReview2.put("rating", "5");
-        dummyReview2.put("text", "This place is good!");
-        dummyReview2.put("date", "2-9-20");
-        
-        List<Map<String, String>> dummyReviewList = new ArrayList<Map<String, String>>();
-        dummyReviewList.add(dummyReview1);
-        dummyReviewList.add(dummyReview2);
-        
-        return dummyReviewList;
     }
 }
