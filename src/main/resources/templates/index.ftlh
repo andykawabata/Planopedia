@@ -334,7 +334,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="contact-form-wrapper">
-                            <form action="/result" method="GET">
+                            <form action="/plan/result" method="GET">
                                 <div class="row justify-content-center">
                                     <div class="col-md-6">
                                         <div class="single-input">

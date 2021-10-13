@@ -26,10 +26,14 @@ public class UserController {
         return "save: "+user;
 
     }
-
-
-
-
-
-
+    
+    @GetMapping(path = "/profile")
+    public String showProfile(){
+        return "index";
+    }
+    
+    @GetMapping(path = "/saved-plan")
+    public String showSingleSavedPlan(@RequestParam("plan") int planId){
+        return "index";
+    }
 }
