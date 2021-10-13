@@ -103,8 +103,9 @@ public class YelpAPI implements APIFoodInterface, APIReviewInterface {
      * @param _businessLocation contains the locations information to get the name
      * @return tempRestaurantData A map containing the restaurant information
      */
-    private Map<String, String> getRestaurantsHelper(JSONObject _businessIndex, JSONObject _businessLocation) {
+    private Map<String, String> getRestaurantsHelper(JSONObject _businessIndex, JSONObject _businessLocation) throws IOException {
         Map<String, String> tempRestaurantData = new HashMap<String, String>();
+        JSONArray categories = _businessIndex.getJSONArray("categories");
 
         tempRestaurantData.put("restaurantID", _businessIndex.getString("id"));
         tempRestaurantData.put("restaurantName", _businessIndex.getString("name"));
@@ -112,6 +113,30 @@ public class YelpAPI implements APIFoodInterface, APIReviewInterface {
         tempRestaurantData.put("rating", Integer.toString(_businessIndex.getInt("rating")));
         tempRestaurantData.put("price", _businessIndex.getString("price"));
         tempRestaurantData.put("phoneNumber", _businessIndex.getString("display_phone"));
+        tempRestaurantData.put("image_url", _businessIndex.getString("image_url"));
+
+        if (categories.length() > 0) {
+            int i = 0;
+            String tempCategories = "";
+            String tempTitles = "";
+            while (i <= categories.length() - 1) {
+                //System.out.println(categories.getJSONObject(i).get("alias"));
+                if (i == 0) {
+                    tempCategories += (categories.getJSONObject(i).get("alias")).toString();
+                    tempTitles += (categories.getJSONObject(i).get("title")).toString();
+                } else {
+                    tempCategories += "'categorySeparator'" + (categories.getJSONObject(i).get("alias")).toString();
+                    tempTitles += "'titleSeparator'" + (categories.getJSONObject(i).get("title")).toString();
+                }
+
+                i++;
+            }
+            tempRestaurantData.put("categories", tempCategories);
+            tempRestaurantData.put("titles", tempTitles);
+
+        } else {
+            throw new IOException("No categories assigned");
+        }
 
         return tempRestaurantData;
     }
@@ -273,14 +298,38 @@ public class YelpAPI implements APIFoodInterface, APIReviewInterface {
      * name
      * @return tempRestaurantData A map containing the restaurant information
      */
-    private Map<String, String> getRestaurantSearchByNameHelper(JSONObject _businessIndex, JSONObject _businessLocation) {
+    private Map<String, String> getRestaurantSearchByNameHelper(JSONObject _businessIndex, JSONObject _businessLocation) throws IOException {
         Map<String, String> tempRestaurantData = new HashMap<String, String>();
+        JSONArray categories = _businessIndex.getJSONArray("categories");
 
         tempRestaurantData.put("restaurantID", _businessIndex.getString("id"));
         tempRestaurantData.put("restaurantName", _businessIndex.getString("name"));
         tempRestaurantData.put("address", _businessLocation.getString("address1"));
         tempRestaurantData.put("rating", Integer.toString(_businessIndex.getInt("rating")));
         tempRestaurantData.put("phoneNumber", _businessIndex.getString("display_phone"));
+
+        if (categories.length() > 0) {
+            int i = 0;
+            String tempCategories = "";
+            String tempTitles = "";
+            while (i <= categories.length() - 1) {
+                //System.out.println(categories.getJSONObject(i).get("alias"));
+                if (i == 0) {
+                    tempCategories += (categories.getJSONObject(i).get("alias")).toString();
+                    tempTitles += (categories.getJSONObject(i).get("title")).toString();
+                } else {
+                    tempCategories += "'categorySeparator'" + (categories.getJSONObject(i).get("alias")).toString();
+                    tempTitles += "'titleSeparator'" + (categories.getJSONObject(i).get("title")).toString();
+                }
+
+                i++;
+            }
+            tempRestaurantData.put("categories", tempCategories);
+            tempRestaurantData.put("titles", tempTitles);
+
+        } else {
+            throw new IOException("No categories assigned");
+        }
 
         return tempRestaurantData;
     }

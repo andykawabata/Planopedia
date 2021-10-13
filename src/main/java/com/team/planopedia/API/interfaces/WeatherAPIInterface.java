@@ -1,13 +1,13 @@
 package com.team.planopedia.API.interfaces;
 
-
-
 /**
  * Grabs weather from the weather API
  *
- * @author Arturo
- * Last updated 4/1/2020
+ * @author Nimra Sami
+ * @author Arturo Serdan
+ * Last updated October 13, 2021
  */
+import java.util.Map;
 public interface WeatherAPIInterface {
 
     /**
@@ -15,7 +15,8 @@ public interface WeatherAPIInterface {
      *
      * @param _zipCode
      * @param _countryCode
-     * @return an Array String with the weather information from the API
+     * @return an HashMap with the weather information from the API
      */
-    String [] getWeather(String _zipCode, String _countryCode);
+    Map<String, String> getWeather(String _zipCode, String _countryCode);
 }
+
