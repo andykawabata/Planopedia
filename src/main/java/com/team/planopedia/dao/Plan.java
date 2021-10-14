@@ -13,11 +13,10 @@ public class Plan {
 
     /**
      * one to one relation,
-     * configure the name of the column in the plan table that maps to the primary key
-     * in the restaurantInfo table.
+     * foreign key in the plan table that maps to the primary key in the restaurantInfo table.
      */
     @OneToOne
-    @JoinColumn(name = "restaurantInfoId", referencedColumnName = "planId")
+    @JoinColumn(name = "restaurantInfoId")
     private RestaurantInfo restaurantInfo;
 
     /**

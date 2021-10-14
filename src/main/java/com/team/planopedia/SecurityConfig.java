@@ -14,7 +14,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/").permitAll()
                 .and()
           .oauth2Login()
-                .loginPage("/login")
-                .defaultSuccessUrl("/loginSucess", true);
+                .loginPage("/auth/login-page")
+                .defaultSuccessUrl("/auth/success", true);
     }
 }
