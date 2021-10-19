@@ -7,7 +7,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6">
                     <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
                         <div class="logo">
-                            <a href="#0"> <img src="assets/img/logo/planopedia_blau.svg" alt=""> </a>
+                            <a href="#0"> <img src="<@spring.url '/assets/img/logo/planopedia_blau.svg'/>" alt=""> </a>
                         </div>
                         <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis nulla placerat amet amet congue.</p>
                         <ul class="socials">
@@ -75,10 +75,10 @@
 
 
 <!-- ========================= JS here ========================= -->
-<script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
-<script src="assets/js/contact-form.js"></script>
-<script src="assets/js/tiny-slider.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="<@spring.url '/assets/js/bootstrap-5.0.0-beta1.min.js'/>"></script>
+<script src="<@spring.url '/assets/js/contact-form.js'/>"></script>
+<script src="<@spring.url '/assets/js/tiny-slider.js'/>"></script>
+<script src="<@spring.url '/assets/js/wow.min.js'/>"></script>
+<script src="<@spring.url '/assets/js/main.js'/>"></script>
 </body>
 </html>
