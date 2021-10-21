@@ -1,10 +1,16 @@
 package com.team.planopedia.controllers;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.team.planopedia.dao.User;
+import com.team.planopedia.dao.UserService;
+import com.team.planopedia.repository.UserRepository;
 import java.security.Principal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ResolvableType;
 import org.springframework.core.io.FileSystemResource;
@@ -15,6 +21,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -29,6 +36,9 @@ public class AuthController {
     
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping("/login-page")
     public String getLoginPage(Model model) {
@@ -47,18 +57,70 @@ public class AuthController {
         return "login-page";
     }
 
-    
     @GetMapping("/success")
-    public String loginSucess(@AuthenticationPrincipal OAuth2User user, Model model) {
-        // IF USER NOT REGISTERED, ADD TO DB
-        // IF USER ID NOT IN SESSION, ADD USER ID TO SESSION
-        // GET USER BY ID
-        // ADD USER TO MODEL
+    public String loginSucess(@AuthenticationPrincipal OAuth2User oauthUser, HttpSession session) {
         
-        //temporarilly just use oauth info
-        model.addAttribute("user", user);
+ 
+        String email = (String) oauthUser.getAttributes().get("email");
+        String name = (String) oauthUser.getAttributes().get("name");
+        String picture = (String) oauthUser.getAttributes().get("picture");
+        
+        
+        //Use repository to check if user exists
+        User user = userRepository.findByGoogleEmail(email);
+        boolean isNewUser = user == null;
+        
+        if(isNewUser){
+            User tempUser = new User();
+            tempUser.setUserName(name);
+            tempUser.setGoogleEmail(email);
+            addUserSession(session, tempUser, "tempUser");
+            //userRepository.save(tempUser);
+            return "redirect:/auth/onboard";
+            
+        }else{
+            System.out.println("here " + user.toString());
+            addUserSession(session, user, "user");
+        }
+        
         return "redirect:/";
-    }   
+    }
+    
+    private void addUserSession(HttpSession session, User user, String key){
+        ObjectMapper oMapper = new ObjectMapper();
+        Map<String, Object> map = oMapper.convertValue(user, Map.class);
+        session.setAttribute(key, map);
+    }
+    
+    // MUST BE CHANGED IF USER OBJECT CHANGES
+    private User convertUserMapToObject(Map<String, Object> userMap){
+        User user = new User();
+        user.setUserName((String) userMap.get("userName"));
+        user.setGoogleEmail((String) userMap.get("googleEmail"));
+        return user;
+    }
+    
+    @GetMapping("/onboard")
+    public String onboardPage() {
+        
+        return "onboard";
+    }
+    
+    @PostMapping("/register")
+    public String saveUser(HttpSession session) {
+        
+        //Save data in DB
+        Map<String, Object> userMap = (Map<String, Object>) session.getAttribute("tempUser");
+        User user = convertUserMapToObject(userMap);
+        userRepository.save(user);
+        
+        //start session
+        addUserSession(session,  user, "user");
+        
+        return "redirect:/";
+    }
+    
+    //
     
     //@GetMapping("/logout")
     //public String logout() {  
