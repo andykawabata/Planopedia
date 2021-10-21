@@ -43,7 +43,7 @@
                                                 <a class="page-scroll" href="#contact">Contact</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="page-scroll" href="#login">Login</a>
+                                                <a class="page-scroll" href="<@spring.url 'oauth2/authorization/google' />">Login</a>
                                             </li>
                                         </ul>
                                     </div>

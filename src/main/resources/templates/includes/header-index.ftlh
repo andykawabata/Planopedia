@@ -45,7 +45,11 @@
                                                 <a class="page-scroll" href="#contact">Contact</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="page-scroll" href="#login">Login</a>
+                                            <#if user??>
+                                           	    <a class="page-scroll" href="<@spring.url 'oauth2/authorization/google'/>">Logout</a>
+                                           	<#else>
+                                                <a class="page-scroll" href="<@spring.url 'oauth2/authorization/google'/>">Login</a>
+                                            </#if>
                                             </li>
                                         </ul>
                                     </div>
