@@ -3,13 +3,11 @@ package com.team.planopedia.dao;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Plan")
+@Table(name = "plan")
 public class Plan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long planId;
-    private Long userId;
-    //private Long restaurantInfoId;
 
     /**
      * one to one relation,
@@ -19,10 +17,19 @@ public class Plan {
     @JoinColumn(name = "restaurantInfoId")
     private RestaurantInfo restaurantInfo;
 
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
     /**
      * Constructors, getters and setters
      */
     public Plan() {
+    }
+
+    public Plan(Long planId, RestaurantInfo restaurantInfo, User user) {
+        this.planId = planId;
+        this.restaurantInfo = restaurantInfo;
+        this.user = user;
     }
 
     public Long getPlanId() {
@@ -33,12 +40,12 @@ public class Plan {
         this.planId = planId;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public RestaurantInfo getRestaurantInfo() {
