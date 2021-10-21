@@ -25,6 +25,14 @@ public class User {
     @JoinColumn(name="userId")
     private List<Plan> plans = new ArrayList<>();
 
+    // one user get all the ratings for there previous visits
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name="userId")
+    private List<RatingAlgorithm> ratingAlgorithms = new ArrayList<>();
+
     /**
      * Constructors, getters and setters
      */
@@ -73,6 +81,31 @@ public class User {
     public void setPlans(List<Plan> plans) {
         this.plans = plans;
     }
+
+    /**
+     * get all the user category ratings
+     */
+    public List<RatingAlgorithm> getRatingAlgorithms(){return ratingAlgorithms; }
+
+    public void setRatingAlgorithms(List<RatingAlgorithm> ratingAlgorithms) {
+        this.ratingAlgorithms = ratingAlgorithms;
+    }
+
+//    /**
+//     * addPlan used to synchronize both sides of the bidirectional association
+//     */
+//    public void addPlan(Plan plan){
+//        plans.add(plan);
+//        plan.setUser(this);
+//    }
+//    /**
+//     * removePlan used to synchronize both sides of the bidirectional association
+//     */
+//    public void removePlan(Plan plan){
+//        plans.remove(plan);
+//        plan.setUser(null);
+//    }
+
 }
 
 
