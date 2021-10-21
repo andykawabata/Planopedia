@@ -59,26 +59,25 @@ public class AuthController {
     @GetMapping("/success")
     public String loginSucess(@AuthenticationPrincipal OAuth2User oauthUser, HttpSession session) {
         
- 
+        // get info from oauth object
         String email = (String) oauthUser.getAttributes().get("email");
         String name = (String) oauthUser.getAttributes().get("name");
         String picture = (String) oauthUser.getAttributes().get("picture");
         
         
-        //Use repository to check if user exists
+        //check if user already exists
         User user = userRepository.findByGoogleEmail(email);
         boolean isNewUser = user == null;
         
         if(isNewUser){
+            // build temp user object to store as session, this is needed so the info persists during onboarding
             User tempUser = new User();
             tempUser.setUserName(name);
             tempUser.setGoogleEmail(email);
             addUserSession(session, tempUser, "tempUser");
-            //userRepository.save(tempUser);
             return "redirect:/auth/onboard";
             
         }else{
-            System.out.println("here " + user.toString());
             addUserSession(session, user, "user");
         }
         
