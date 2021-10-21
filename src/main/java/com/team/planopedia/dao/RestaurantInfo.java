@@ -1,6 +1,8 @@
 package com.team.planopedia.dao;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table (name = "restaurantInfo")
@@ -13,6 +15,17 @@ public class RestaurantInfo {
     private String restaurantAddress;
     private String restaurantZip;
 
+    @OneToOne(mappedBy = "restaurantInfo")
+    private Plan plan;
+
+
+    //resturantInfo can have many categories, to get all categories for the resturantInfo
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name="restaurantInfoId")
+    private List<Category> categories = new ArrayList<>();
 
     /**
      * Constructors, getters and setters
@@ -22,10 +35,12 @@ public class RestaurantInfo {
     }
 
 
-    public RestaurantInfo(String restaurantName, String restaurantAddress, String restaurantZip) {
+    public RestaurantInfo(Long restaurantInfoId, String restaurantName, String restaurantAddress, String restaurantZip, List<Category> categories) {
+        this.restaurantInfoId = restaurantInfoId;
         this.restaurantName = restaurantName;
         this.restaurantAddress = restaurantAddress;
         this.restaurantZip = restaurantZip;
+        this.categories = categories;
     }
 
     public Long getRestaurantInfoId() {
@@ -58,5 +73,25 @@ public class RestaurantInfo {
 
     public void setRestaurantZip(String restaurantZip) {
         this.restaurantZip = restaurantZip;
+    }
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public void setPlan(Plan plan) {
+        this.plan = plan;
+    }
+
+    /**
+     * get all Categories that the restaurant have
+     * @return
+     */
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
 }
