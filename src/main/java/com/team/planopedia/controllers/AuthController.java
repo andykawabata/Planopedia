@@ -3,7 +3,6 @@ package com.team.planopedia.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.team.planopedia.dao.User;
-import com.team.planopedia.dao.UserService;
 import com.team.planopedia.repository.UserRepository;
 import java.security.Principal;
 import java.util.HashMap;
