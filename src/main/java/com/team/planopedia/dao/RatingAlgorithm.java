@@ -11,15 +11,24 @@ public class RatingAlgorithm {
 
     private Integer categoryRating;
 
-    private Long userId;
+   // one user have many ratingAlgorithm
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
+    //one category can belong to many ratingAlgorithm
+    @ManyToOne
+    @JoinColumn(name = "categoryName")
+    Category category;
 
     public RatingAlgorithm() {
     }
 
-    public RatingAlgorithm(Long algorithmId, Integer categoryRating, Long userId) {
+    public RatingAlgorithm(Long algorithmId, Integer categoryRating, User user, Category category) {
         this.algorithmId = algorithmId;
         this.categoryRating = categoryRating;
-        this.userId = userId;
+        this.user = user;
+        this.category = category;
     }
 
     public Long getAlgorithmId() {
@@ -38,11 +47,19 @@ public class RatingAlgorithm {
         this.categoryRating = categoryRating;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

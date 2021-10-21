@@ -15,6 +15,10 @@ public class RestaurantInfo {
     private String restaurantAddress;
     private String restaurantZip;
 
+    @OneToOne(mappedBy = "restaurantInfo")
+    private Plan plan;
+
+
     //resturantInfo can have many categories, to get all categories for the resturantInfo
     @OneToMany(
             cascade = CascadeType.ALL,
@@ -69,6 +73,14 @@ public class RestaurantInfo {
 
     public void setRestaurantZip(String restaurantZip) {
         this.restaurantZip = restaurantZip;
+    }
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public void setPlan(Plan plan) {
+        this.plan = plan;
     }
 
     /**

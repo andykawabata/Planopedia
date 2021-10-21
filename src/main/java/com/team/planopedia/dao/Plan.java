@@ -9,10 +9,6 @@ public class Plan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long planId;
 
-
-    private Long userId;
-
-
     /**
      * one to one relation,
      * foreign key in the plan table that maps to the primary key in the restaurantInfo table.
@@ -21,16 +17,19 @@ public class Plan {
     @JoinColumn(name = "restaurantInfoId")
     private RestaurantInfo restaurantInfo;
 
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
     /**
      * Constructors, getters and setters
      */
     public Plan() {
     }
 
-    public Plan(Long planId, Long userId, RestaurantInfo restaurantInfo) {
+    public Plan(Long planId, RestaurantInfo restaurantInfo, User user) {
         this.planId = planId;
-        this.userId = userId;
         this.restaurantInfo = restaurantInfo;
+        this.user = user;
     }
 
     public Long getPlanId() {
@@ -41,19 +40,19 @@ public class Plan {
         this.planId = planId;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public RestaurantInfo getRestaurantInfo() {
         return restaurantInfo;
     }
 
     public void setRestaurantInfo(RestaurantInfo restaurantInfo) {
         this.restaurantInfo = restaurantInfo;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 }

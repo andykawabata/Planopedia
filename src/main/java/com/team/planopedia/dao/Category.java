@@ -1,6 +1,8 @@
 package com.team.planopedia.dao;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="category")
@@ -8,14 +10,17 @@ public class Category {
     @Id
     private String categoryName;
 
-    private Long restaurantInfoId;
+
+    @ManyToOne
+    @JoinColumn(name = "restaurantInfoId")
+    RestaurantInfo restaurantInfo;
 
     public Category() {
     }
 
-    public Category(String categoryName, Long restaurantInfoId) {
+    public Category(String categoryName, RestaurantInfo restaurantInfo) {
         this.categoryName = categoryName;
-        this.restaurantInfoId = restaurantInfoId;
+        this.restaurantInfo = restaurantInfo;
     }
 
     public String getCategoryName() {
@@ -26,11 +31,11 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public Long getRestaurantInfoId() {
-        return restaurantInfoId;
+    public RestaurantInfo getRestaurantInfo() {
+        return restaurantInfo;
     }
 
-    public void setRestaurantInfoId(Long restaurantInfoId) {
-        this.restaurantInfoId = restaurantInfoId;
+    public void setRestaurantInfo(RestaurantInfo restaurantInfo) {
+        this.restaurantInfo = restaurantInfo;
     }
 }

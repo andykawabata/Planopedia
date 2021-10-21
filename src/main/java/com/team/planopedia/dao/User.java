@@ -90,6 +90,22 @@ public class User {
     public void setRatingAlgorithms(List<RatingAlgorithm> ratingAlgorithms) {
         this.ratingAlgorithms = ratingAlgorithms;
     }
+
+//    /**
+//     * addPlan used to synchronize both sides of the bidirectional association
+//     */
+//    public void addPlan(Plan plan){
+//        plans.add(plan);
+//        plan.setUser(this);
+//    }
+//    /**
+//     * removePlan used to synchronize both sides of the bidirectional association
+//     */
+//    public void removePlan(Plan plan){
+//        plans.remove(plan);
+//        plan.setUser(null);
+//    }
+
 }
 
 
