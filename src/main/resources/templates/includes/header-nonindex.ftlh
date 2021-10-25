@@ -1,3 +1,4 @@
+<section id="home" class="hero-section-wrapper-5">
             <!-- ========================= header-6 start ========================= -->
             <#import "/spring.ftl" as spring />   
             <header class="header header-6">
@@ -18,29 +19,24 @@
                                     <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
                                         <ul id="nav6" class="navbar-nav ms-auto">
                                             <li class="nav-item">
-                                                <a class="page-scroll active" href="#home">Home</a>
-                                            </li>
-                                            <!-- 
-                                            <li class="nav-item">
-                                              <a class="page-scroll" href="#feature">Feature</a>
-                                            </li>
-                                            -->
-                                            <li class="nav-item">
-                                                <a class="page-scroll" href="#about">About</a>
+                                                <a class="page-scroll active" href="/#home">Home</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="page-scroll" href="#gallery">Technologies</a>
+                                                <a class="page-scroll" href="/#about">About</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="page-scroll" href="/#gallery">Technologies</a>
                                             </li>
 
                                             <li class="nav-item">
-                                                <a class="page-scroll" href="#plan">Plan</a>
+                                                <a class="page-scroll" href="/#plan">Plan</a>
                                             </li>
 
                                             <li class="nav-item">
-                                                <a class="page-scroll" href="#team">Team</a>
+                                                <a class="page-scroll" href="/#team">Team</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="page-scroll" href="#contact">Contact</a>
+                                                <a class="page-scroll" href="/#contact">Contact</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="page-scroll" href="<@spring.url 'oauth2/authorization/google' />">Login</a>
@@ -48,10 +44,6 @@
                                         </ul>
                                     </div>
 
-                                    <div class="header-action d-flex">
-                                        <a href="#0"> <i class="lni lni-cart"></i> </a>
-                                        <a href="#0"> <i class="lni lni-alarm"></i> </a>
-                                    </div>
                                     <!-- navbar collapse -->
                                 </nav>
                                 <!-- navbar -->
