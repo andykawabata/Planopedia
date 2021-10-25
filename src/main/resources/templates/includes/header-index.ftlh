@@ -45,14 +45,13 @@
                                                 <a class="page-scroll" href="#contact">Contact</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="page-scroll" href="#login">Login</a>
+                                            <#if user??>
+                                           	    <a class="page-scroll" href="<@spring.url 'oauth2/authorization/google'/>">Logout</a>
+                                           	<#else>
+                                                <a class="page-scroll" href="<@spring.url 'oauth2/authorization/google'/>">Login</a>
+                                            </#if>
                                             </li>
                                         </ul>
-                                    </div>
-
-                                    <div class="header-action d-flex">
-                                        <a href="#0"> <i class="lni lni-cart"></i> </a>
-                                        <a href="#0"> <i class="lni lni-alarm"></i> </a>
                                     </div>
                                     <!-- navbar collapse -->
                                 </nav>
@@ -75,7 +74,7 @@
                             <div class="hero-content-wrapper">
                                 <h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">Planning Something, But Can't Decide What?</h2>
                                 <p class="mb-30 wow fadeInUp" data-wow-delay=".4s">Planopedia takes the guesswork out of planning an evening by taking your interests, the number of people in your party, and picks an evening for you!	.</p>
-                                <a href="#0" class="button button-lg radius-50 wow fadeInUp" data-wow-delay=".6s">Get Started <i class="lni lni-chevron-right"></i> </a>
+                                <a href="#plan" class="button button-lg radius-50 wow fadeInUp" data-wow-delay=".6s">Get Started <i class="lni lni-chevron-right"></i> </a>
                             </div>
                         </div>
                         <div class="col-lg-6 align-self-end">
