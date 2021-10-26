@@ -15,6 +15,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String userName;
+    
+    @Column(name="google_email", unique=true)
     private String googleEmail;
 
     //one user can have many plans, to get all plans for the user
@@ -28,7 +30,7 @@ public class User {
     // one user get all the ratings for there previous visits
     @OneToMany(
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = false
     )
     @JoinColumn(name="userId")
     private List<RatingAlgorithm> ratingAlgorithms = new ArrayList<>();

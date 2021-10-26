@@ -7,7 +7,10 @@ import java.util.List;
 @Entity
 @Table(name="category")
 public class Category {
+    
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long categoryId;
     private String categoryName;
 
 
@@ -21,6 +24,10 @@ public class Category {
     public Category(String categoryName, RestaurantInfo restaurantInfo) {
         this.categoryName = categoryName;
         this.restaurantInfo = restaurantInfo;
+    }
+
+    public Category(String catName) {
+        this.categoryName = catName;
     }
 
     public String getCategoryName() {

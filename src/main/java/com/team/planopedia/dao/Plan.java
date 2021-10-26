@@ -13,11 +13,11 @@ public class Plan {
      * one to one relation,
      * foreign key in the plan table that maps to the primary key in the restaurantInfo table.
      */
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "restaurantInfoId")
     private RestaurantInfo restaurantInfo;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
     private User user;
     /**

@@ -17,8 +17,8 @@ public class RatingAlgorithm {
     private User user;
 
     //one category can belong to many ratingAlgorithm
-    @ManyToOne
-    @JoinColumn(name = "categoryName")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "categoryId")
     Category category;
 
     public RatingAlgorithm() {

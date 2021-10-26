@@ -1,6 +1,7 @@
 package com.team.planopedia.modelsAndServices.restaurant.BasicInfo;
 
 import com.team.planopedia.API.adapters.RestaurantApiAdapter;
+import com.team.planopedia.dao.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +15,7 @@ public class BasicInfoService {
     //yelpAPIAdapter apiAdapter = new yelpAPIAdapter;
 
     
-    public BasicInfo chooseSingleRestaurant(String city, String zip, String cuisine, int numPeople){
+    public BasicInfo chooseSingleRestaurant(String city, String zip, String cuisine, int numPeople, User user){
         
         RestaurantApiAdapter api = new RestaurantApiAdapter();
         int numRestaurants = 20;
