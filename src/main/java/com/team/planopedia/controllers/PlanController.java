@@ -79,9 +79,6 @@ public class PlanController {
     @GetMapping("/save-plan")
     public String savePlan(HttpSession session) {
         
-        //Map<String, Object> userMap = (Map<String, Object>) session.getAttribute("user");
-        //User user = AuthController.convertUserMapToObject(userMap);
-        
         User user = new User();
         user.setGoogleEmail("e@mail.com");
         user.setUserName("user1");
@@ -116,7 +113,8 @@ public class PlanController {
         List<RatingAlgorithm> ratingList = new ArrayList<>();
         RatingAlgorithm rating = new RatingAlgorithm();
         
-        Category cat = new Category("MyCategory");
+        //get one of users categories
+        Category cat = user.getPlans().get(0).getRestaurantInfo().getCategories().get(0);
         rating.setCategory(cat);
         rating.setCategoryRating(4);
         
