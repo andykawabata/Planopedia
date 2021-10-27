@@ -5,13 +5,16 @@ import javax.persistence.*;
 @Entity
 @Table(name = "plan")
 public class Plan {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long planId;
 
+    private int rating;
+
     /**
-     * one to one relation,
-     * foreign key in the plan table that maps to the primary key in the restaurantInfo table.
+     * one to one relation, foreign key in the plan table that maps to the
+     * primary key in the restaurantInfo table.
      */
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "restaurantInfoId")
@@ -20,6 +23,7 @@ public class Plan {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
     private User user;
+
     /**
      * Constructors, getters and setters
      */
@@ -40,6 +44,15 @@ public class Plan {
         this.planId = planId;
     }
 
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    
     public User getUser() {
         return user;
     }

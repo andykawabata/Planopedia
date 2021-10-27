@@ -2,7 +2,6 @@ package com.team.planopedia.controllers;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.team.planopedia.dao.RatingAlgorithm;
 import com.team.planopedia.dao.User;
 import com.team.planopedia.repository.UserRepository;
 import java.security.Principal;
@@ -113,7 +112,6 @@ public class AuthController {
         //Save data in DB
         Map<String, Object> userMap = (Map<String, Object>) session.getAttribute("tempUser");
         User user = convertUserMapToObject(userMap);
-        user.setRatingAlgorithms(new ArrayList<RatingAlgorithm>());
         userRepository.save(user);
         
         //start session

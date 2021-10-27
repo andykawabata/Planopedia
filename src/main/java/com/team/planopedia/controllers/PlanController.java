@@ -2,7 +2,6 @@ package com.team.planopedia.controllers;
 
 import com.team.planopedia.dao.Category;
 import com.team.planopedia.dao.Plan;
-import com.team.planopedia.dao.RatingAlgorithm;
 import com.team.planopedia.dao.RestaurantInfo;
 import com.team.planopedia.dao.User;
 import com.team.planopedia.modelsAndServices.restaurant.Restaurant;
@@ -79,11 +78,13 @@ public class PlanController {
     @GetMapping("/save-plan")
     public String savePlan(HttpSession session) {
         
-        User user = new User();
-        user.setGoogleEmail("e@mail.com");
-        user.setUserName("user1");
-        userRepository.save(user);
-        
+//        User user = new User();
+//        user.setGoogleEmail("e@mail.com");
+//        user.setUserName("user1");
+//        userRepository.save(user);
+
+        User user = userRepository.findByUserId((Long) (long) 1);
+
         Plan plan = new Plan();
         RestaurantInfo restInfo = new RestaurantInfo();
         restInfo.setRestaurantAddress("123 Street");
@@ -105,24 +106,13 @@ public class PlanController {
     
     @GetMapping("/rate-plan")
     public String ratePlan(HttpSession session) {
+      
+        Long planId = (long) 4;
+        int rating = 3;
         
-        //get user with id of 1
-        User user = userRepository.findByUserId((Long) (long) 1);
-        
-        
-        List<RatingAlgorithm> ratingList = new ArrayList<>();
-        RatingAlgorithm rating = new RatingAlgorithm();
-        
-        //get one of users categories
-        Category cat = user.getPlans().get(0).getRestaurantInfo().getCategories().get(0);
-        rating.setCategory(cat);
-        rating.setCategoryRating(4);
-        
-        ratingList.add(rating);
-        
-        user.setRatingAlgorithms(ratingList);
-        userRepository.save(user);
-        
+        Plan plan = planRepository.findByPlanId(planId);
+        plan.setRating(3);
+        planRepository.save(plan);
         
         return "index";
     } 
@@ -130,9 +120,9 @@ public class PlanController {
     @GetMapping("/test")
     public String test() {
         //test to get users rating algorithms
-        User user = userRepository.findByUserId((Long) (long) 2);
-        List<RatingAlgorithm> alist = user.getRatingAlgorithms();
-        System.out.println(alist.get(0).getCategory().getCategoryName());
+        //User user = userRepository.findByUserId((Long) (long) 2);
+        //List<RatingAlgorithm> alist = user.getRatingAlgorithms();
+        //System.out.println(alist.get(0).getCategory().getCategoryName());
         return "index";
     } 
     
