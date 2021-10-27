@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
 <#include "/includes/head.ftlh">
 <#include "/includes/preloader.ftlh">
 <#include "/includes/header-index.ftlh">
@@ -13,110 +15,7 @@
     
         <!-- ========================= hero-section-wrapper-6 end ========================= -->
 
-        <!-- ========================= feature style-5 start ========================= -->
-        <!-- 
-        <section id="feature" class="feature-section feature-style-5">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-8">
-                <div class="section-title text-center mb-60">
-                  <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Specializing In</h3>
-                  <p class="wow fadeInUp" data-wow-delay=".4s">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="row">
-              <div class="col-lg-4 col-md-6">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-                  <div class="icon">
-                    <i class="lni lni-vector"></i>
-                    <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                      </svg>                  
-                  </div>
-                  <div class="content">
-                    <h5>Graphics Design</h5>
-                    <p>Short description for the ones who look for something new.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-                  <div class="icon">
-                    <i class="lni lni-pallet"></i>
-                    <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                      </svg> 
-                  </div>
-                  <div class="content">
-                    <h5>Print Design</h5>
-                    <p>Short description for the ones who look for something new.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                  <div class="icon">
-                    <i class="lni lni-stats-up"></i>
-                    <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                      </svg> 
-                  </div>
-                  <div class="content">
-                    <h5>Business Analysis</h5>
-                    <p>Short description for the ones who look for something new.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-                  <div class="icon">
-                    <i class="lni lni-code-alt"></i>
-                    <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                      </svg> 
-                  </div>
-                  <div class="content">
-                    <h5>Web Development</h5>
-                    <p>Short description for the ones who look for something new.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-                  <div class="icon">
-                    <i class="lni lni-lock"></i>
-                    <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                      </svg> 
-                  </div>
-                  <div class="content">
-                    <h5>Best Security</h5>
-                    <p>Short description for the ones who look for something new.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-                  <div class="icon">
-                    <i class="lni lni-code"></i>
-                    <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                      </svg> 
-                  </div>
-                  <div class="content">
-                    <h5>Web Design</h5>
-                    <p>Short description for the ones who look for something new.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-    
-          </div>
-        </section>
-        -->
-        <!-- ========================= feature style-5 end ========================= -->
+          <!-- ========================= feature style-5 end ========================= -->
 
         <!-- ========================= about style-4 start ========================= -->
         <section id="about" class="about-section about-style-4">
@@ -126,7 +25,7 @@
                         <div class="about-content-wrapper">
                             <div class="section-title mb-30">
                                 <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">The future of planning starts here</h3>
-                                <p class="wow fadeInUp" data-wow-delay=".3s">Stop wasting time and your friends' time, lobbing questions at each other about where to eat,</p>
+                                <p class="wow fadeInUp" data-wow-delay=".3s">Stop wasting you and your friends' time, lobbing questions at each other about where to eat. Just follow these 3 easy steps!</p>
                             </div>
                             <ul>
                                 <li class="wow fadeInUp" data-wow-delay=".35s">
@@ -252,72 +151,7 @@
             </div>
         </section>
         <!-- ========================= gallery style-4 end ========================= -->
-
-        <!-- ========================= pricing style-4 start ========================= -->
-        <!-- 
-        <section id="pricing" class="pricing-section pricing-style-4 bg-light">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-xl-5 col-lg-6">
-                <div class="section-title mb-60">
-                  <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Pricing Plan</h3>
-                  <p class="wow fadeInUp" data-wow-delay=".4s">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-                </div>
-              </div>
-              <div class="col-xl-7 col-lg-6">
-                <div class="pricing-active-wrapper wow fadeInUp" data-wow-delay=".4s">
-                  <div class="pricing-active">
-                    <div class="single-pricing-wrapper">
-                      <div class="single-pricing">
-                        <h6>Basic Design</h6>
-                        <h4>Web Design</h4>
-                        <h3>$ 29.00</h3>
-                        <ul>
-                          <li>Carefully crafted components</li>
-                          <li>Amazing page examples</li>
-                          <li>Super friendly support team</li>
-                          <li>Awesome Support</li>
-                        </ul>
-                        <a href="#0" class="button radius-30">Get Started</a>
-                      </div>
-                    </div>
-                    <div class="single-pricing-wrapper">
-                      <div class="single-pricing">
-                        <h6>Standard Design</h6>
-                        <h4>Web Development</h4>
-                        <h3>$ 89.00</h3>
-                        <ul>
-                          <li>Carefully crafted components</li>
-                          <li>Amazing page examples</li>
-                          <li>Super friendly support team</li>
-                          <li>Awesome Support</li>
-                        </ul>
-                        <a href="#0" class="button radius-30">Get Started</a>
-                      </div>
-                    </div>
-                    <div class="single-pricing-wrapper">
-                      <div class="single-pricing">
-                        <h6>Pro Design</h6>
-                        <h4>Design & Develop</h4>
-                        <h3>$ 199.00</h3>
-                        <ul>
-                          <li>Carefully crafted components</li>
-                          <li>Amazing page examples</li>
-                          <li>Super friendly support team</li>
-                          <li>Awesome Support</li>
-                        </ul>
-                        <a href="#0" class="button radius-30">Get Started</a>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> -->
-        <!-- ========================= pricing style-4 end ========================= -->
-
+      
         <!-- ========================= contact-style-3 start ========================= -->
         <section id="plan" class="contact-section contact-style-3">
             <div class="container">
@@ -332,24 +166,18 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="contact-form-wrapper">
-                            <form action="/result" method="GET">
+                            <form action="/plan/result" method="GET" class="needs-validation">
                                 <div class="row justify-content-center">
                                     <div class="col-md-6">
                                         <div class="single-input">
-                                          <!--  <input type="text" id="name" name="planName" class="form-input" placeholder="Name">
-                                            <i class="lni lni-calendar"></i> -->
-                                        </div>
-                                        <div class="single-input">
-                                          <input type="text" id="name" name="city" class="form-input" placeholder="City">
-                                            
+                                          <input type="text" id="name" name="city" class="form-control" placeholder="City" required>                                         
                                         </div>
 										<div class="single-input">
-                                          <input type="text" id="name" name="zip" class="form-input" placeholder="ZIP">
-                                            
+                                          <input type="text" id="name" name="zip" class="form-control" placeholder="ZIP" required>
                                         </div>
-                                        <div class="col-md-6">
-                                        <label for="cuisine">Cuisine:</label>
-                                        	<select class="form-select" name="cuisine">
+                                        <div class="single-input">
+                                        	<select class="form-select" name="cuisine" required>
+                                        				<option selected disabled value	>Cuisine</option>
                                                         <option value="African">African</option>
                                                         <option value="Brazilian">Brazilian</option>
                                                         <option value="Chinese">Chinese</option>
@@ -357,15 +185,13 @@
                                                         <option value="Ethiopian">Ethiopian</option>
                                                         <option value="French">French</option>
                                                         <option value="German">German</option>
-                                                        <option value="Hungarian">Hungarian</option>
-                                                        <option value="Icelandic">Icelandic</option>
+                                                        <option value="Italian">Hungarian</option>
+                                                        <option value="Mexican">Icelandic</option>
                                              </select>
                                        	</div>
-                                        <p>&nbsp;</p>
-                                        <div class="col-md-6">
-                                            <div class="single-input">
-                                            	<label for="numPeople">Number of Guests:</label>
-                                            	<select class="form-select" name="numPeople">                                            	
+                                        <div class="single-input">
+                                            	<select class="form-select" name="numPeople" required>  
+                                            			<option selected disabled value>Number of Guests</option>                                          	
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
@@ -376,7 +202,6 @@
                                                         <option value="8">8</option>
                                                         <option value="9">9</option>
                                                     </select>
-                                            </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-button">
@@ -720,3 +545,5 @@
         <!-- ========================= clients-logo end ========================= -->
 
 <#include "/includes/footer.ftlh">
+</body>
+</html>

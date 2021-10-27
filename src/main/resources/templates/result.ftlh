@@ -1,13 +1,50 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
 <#include "/includes/head.ftlh">
+<#include "/includes/preloader.ftlh">
 <#include "/includes/header-nonindex.ftlh">
-<body>
-    <div class="container">
-        <h1>Result Page</h1>
-        <p><b>Name:</b> ${restaurant.basicInfo.locationName}</p>   <!--These variables are obtained from the model in the ResultController (model.AddAtribute(...)) -->
-        <p><b>Address:</b> ${restaurant.basicInfo.fullAddress}</p>
-        <p><b>Phone:</b> ${restaurant.basicInfo.phoneNumber}</p>
-        <p><b>Price:</b> ${restaurant.basicInfo.priceRating}</p>
-        <p><b>Rating:</b> ${restaurant.basicInfo.starRating}</p>
-    </div>
-</body>
+
+        <!--[if lte IE 9]>
+          <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+            your experience and security.
+          </p>
+        <![endif]-->
+
+            <!-- ========================= hero-5 start ========================= -->
+            <div class="hero-section hero-style-5 img-bg" style="background-image: url('/assets/img/hero/hero-5/hero-bg.svg')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 align-self-end">
+                            <div class="hero-image wow fadeInUp" data-wow-delay=".5s">
+                                <img src="<@spring.url '/assets/img/hero/hero-5/hero-img.svg'/>" alt="">
+                            </div>
+                        </div>
+ 						<div class="col-lg-6 modal-dialog">
+ 							<div class="modal-content rounded-6">
+                             <div class="hero-content-wrapper modal-body p-4">
+                                <p class=" wow fadeInUp" data-wow-delay=".4s">
+                                	<!--These variables are obtained from the model in the ResultController (model.AddAtribute(...)) -->
+                                	<h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">${restaurant.basicInfo.locationName}</h2>
+                                	<p><b>Rating:</b> ${restaurant.basicInfo.starRating}</p>
+							        <p><b>Address:</b> ${restaurant.basicInfo.fullAddress}</p>
+							        <p><b>Phone:</b> ${restaurant.basicInfo.phoneNumber}</p>
+							        <p><b>Raing:</b> ${restaurant.basicInfo.priceRating}</p>
+							        <br>
+							        <p><a href="#0" class="button button-md radius-50 wow fadeInUp" data-wow-delay=".6s">Plan It <i class="lni lni-chevron-right"></i> </a></p>
+							    </p>
+                                
+                            </div>
+                           </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <!-- ========================= hero-5 end ========================= -->
+
+    </section>
+        <!-- ========================= hero-section-wrapper-6 end ========================= -->
 <#include "/includes/footer.ftlh">
+</body>
+</html>

@@ -20,16 +20,20 @@ public class UserController {
     @ResponseBody
     public String CreateNewUser(){
         User user = new User();
-        user.setUserName("ABCD");
-        user.setGoogle_email("123@gmail.com");
+        user.setUserName("");
+        user.setGoogleEmail("");
         userRepository.save(user);
         return "save: "+user;
 
     }
-
-
-
-
-
-
+    
+    @GetMapping(path = "/profile")
+    public String showProfile(){
+        return "index";
+    }
+    
+    @GetMapping(path = "/saved-plan")
+    public String showSingleSavedPlan(@RequestParam("plan") int planId){
+        return "index";
+    }
 }

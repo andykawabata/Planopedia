@@ -3,6 +3,8 @@ package com.team.planopedia.dao;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -11,43 +13,99 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long u_id;
-    private String u_name;
-    private String google_email;
+    private Long userId;
+    private String userName;
+    private String googleEmail;
 
+    //one user can have many plans, to get all plans for the user
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name="userId")
+    private List<Plan> plans = new ArrayList<>();
+
+    // one user get all the ratings for there previous visits
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name="userId")
+    private List<RatingAlgorithm> ratingAlgorithms = new ArrayList<>();
+
+    /**
+     * Constructors, getters and setters
+     */
     public  User(){};
 
-    public User(Long u_id, String u_name, String email) {
-        this.u_id = u_id;
-        this.u_name = u_name;
-        this.google_email = email;
+    public User(Long userId, String userName, String email) {
+        this.userId = userId;
+        this.userName = userName;
+        this.googleEmail = email;
         //this.providerID = providerID;
     }
 
-    public void setUid(Long uid) {
-        this.u_id = uid;
+    public Long getUserId() {
+        return userId;
     }
 
-
-    public Long getUid() {
-        return u_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
-        return u_name;
+        return userName;
     }
 
     public void setUserName(String userName) {
-        this.u_name = userName;
+        this.userName = userName;
     }
 
-    public String getGoogle_email() {
-        return google_email;
+    public String getGoogleEmail() {
+        return googleEmail;
     }
 
-    public void setGoogle_email(String google_email) {
-        this.google_email = google_email;
+    public void setGoogleEmail(String googleEmail) {
+        this.googleEmail = googleEmail;
     }
+
+    /**
+     * getPlans()
+     * get all the user plans
+     * @return
+     */
+    public List<Plan> getPlans() {
+        return plans;
+    }
+
+    public void setPlans(List<Plan> plans) {
+        this.plans = plans;
+    }
+
+    /**
+     * get all the user category ratings
+     */
+    public List<RatingAlgorithm> getRatingAlgorithms(){return ratingAlgorithms; }
+
+    public void setRatingAlgorithms(List<RatingAlgorithm> ratingAlgorithms) {
+        this.ratingAlgorithms = ratingAlgorithms;
+    }
+
+//    /**
+//     * addPlan used to synchronize both sides of the bidirectional association
+//     */
+//    public void addPlan(Plan plan){
+//        plans.add(plan);
+//        plan.setUser(this);
+//    }
+//    /**
+//     * removePlan used to synchronize both sides of the bidirectional association
+//     */
+//    public void removePlan(Plan plan){
+//        plans.remove(plan);
+//        plan.setUser(null);
+//    }
+
 }
 
 
