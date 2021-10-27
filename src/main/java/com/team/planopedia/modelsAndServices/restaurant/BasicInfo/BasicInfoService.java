@@ -22,7 +22,7 @@ public class BasicInfoService {
         
         List<Map<String, String>> potentialRestaurants = api.getRestaurants(cuisine, city, numRestaurants);
         
-        Map<String, String> chosenRestaurant = this.pickRestaurantFromList(potentialRestaurants);
+        Map<String, String> chosenRestaurant = this.pickRandomRestaurantFromList(potentialRestaurants);
         
         String locationName = chosenRestaurant.get("restaurantName");
         String fullAddress = chosenRestaurant.get("address");
@@ -36,7 +36,7 @@ public class BasicInfoService {
 
     }
     
-    private Map<String, String> pickRestaurantFromList(List<Map<String, String>> potentialRestaurants){
+    private Map<String, String> pickRandomRestaurantFromList(List<Map<String, String>> potentialRestaurants){
         
         return potentialRestaurants.get(0);
     }
