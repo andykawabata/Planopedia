@@ -3,10 +3,10 @@ package com.team.planopedia.API.translators;
 /**
  * This class is meant to store the API keys used for Planopedia Web Application
  * Last updated August 31, 2021
+ *
  * @Author Nimra Sami
  * @Author Arturo Serdan
  */
-
 public class API_Keys {
 
     /**
@@ -19,14 +19,25 @@ public class API_Keys {
 
         return api_key;
     }
-    
-        /**
-     * Method used to store the weather API (openweathermap) key 
+
+    /**
+     * Method used to store the weather API (openweathermap) key
      *
      * @return API key for the weather API
      */
     public static String openWeatherMapAPI() {
         String api_key = "85cbeb5a131f1fa93c91d16c8ecd96fe";
+
+        return api_key;
+    }
+
+    /**
+     * Method meant to store the google API key
+     *
+     * @return API key for the google API
+     */
+    public static String googleAPI() {
+        String api_key = "AIzaSyDppa2_6pPP1zFlH2sYz1ckpjXaNL0bWYQ";
 
         return api_key;
     }

@@ -18,3 +18,6 @@ nb-configuration.xml
 *.jar
 *.war
 *.ear
+
+# specific files
+src/main/resources/application.properties

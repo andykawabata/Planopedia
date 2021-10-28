@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.team.planopedia.dao.User;
 import com.team.planopedia.repository.UserRepository;
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -85,13 +86,14 @@ public class AuthController {
     }
     
     private void addUserSession(HttpSession session, User user, String key){
+        //User object is converted to map because setting the object as session var wouldn't work
         ObjectMapper oMapper = new ObjectMapper();
         Map<String, Object> map = oMapper.convertValue(user, Map.class);
         session.setAttribute(key, map);
     }
     
     // MUST BE CHANGED IF USER OBJECT CHANGES
-    private User convertUserMapToObject(Map<String, Object> userMap){
+    static User convertUserMapToObject(Map<String, Object> userMap){
         User user = new User();
         user.setUserName((String) userMap.get("userName"));
         user.setGoogleEmail((String) userMap.get("googleEmail"));
