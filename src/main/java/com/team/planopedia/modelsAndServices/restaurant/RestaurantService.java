@@ -25,7 +25,7 @@ public class RestaurantService {
         BasicInfo basicInfo = basicInfoService.chooseSingleRestaurant(city, zip, cuisine, 0, user);
         Reviews reviews = reviewsService.getReviewsFromBasicInfo(basicInfo);
         Directions directions = directionsService.getMapUrl(basicInfo.getLocationName(), basicInfo.getZipCode() );
-        
+        System.out.println(basicInfo.getCategoryNames().get(0));
         return new Restaurant(basicInfo, reviews, directions);
     }
 }

@@ -1,5 +1,7 @@
 package com.team.planopedia.modelsAndServices.restaurant.BasicInfo;
 
+import java.util.List;
+
 /**
  * Class that will contain the basic information of a plan, including name, location,
  * contact information, as well as price and user ratings.
@@ -17,6 +19,7 @@ public class BasicInfo {
     private String starRating;
     private String restaurantId;
     private String imageUrl;
+    private List<String> categoryNames;
 
     public BasicInfo(){
 
@@ -30,7 +33,7 @@ public class BasicInfo {
      * @param priceRating String containing plan's price rating (Format: "$", "$$", or "$$$").
      * @param starRating String containing plan's overall rating (Format: "#/#").
      */
-    public BasicInfo(String locationName, String fullAddress, String zipCode, String phoneNumber, String priceRating, String starRating, String restaurantId, String imageUrl) {
+    public BasicInfo(String locationName, String fullAddress, String zipCode, String phoneNumber, String priceRating, String starRating, String restaurantId, String imageUrl, List<String> categoryNames) {
         this.locationName = locationName;
         this.fullAddress = fullAddress;
         this.zipCode = zipCode;
@@ -39,6 +42,7 @@ public class BasicInfo {
         this.starRating = starRating;
         this.restaurantId = restaurantId;
         this.imageUrl = imageUrl;
+        this.categoryNames = categoryNames;
     }
     /*-----------------Getters------------------------*/
 
@@ -46,6 +50,10 @@ public class BasicInfo {
         return imageUrl;
     }
 
+    public List<String> getCategoryNames() {
+        return categoryNames;
+    }
+    
     
     /**
      * Basic getter for the name of the plan's location.

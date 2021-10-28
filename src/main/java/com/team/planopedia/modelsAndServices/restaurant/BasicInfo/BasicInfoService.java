@@ -32,8 +32,9 @@ public class BasicInfoService {
         String starRating = chosenRestaurant.get("rating");
         String restaurantId = chosenRestaurant.get("restaurantID");
         String imageUrl = chosenRestaurant.get("image_url");
+        List<String> categoryNames = parseCategoryNames(chosenRestaurant.get("categories"));
 
-        return new BasicInfo(locationName, fullAddress, zipCode, phoneNumber, priceRating, starRating, restaurantId, imageUrl);
+        return new BasicInfo(locationName, fullAddress, zipCode, phoneNumber, priceRating, starRating, restaurantId, imageUrl, categoryNames);
 
     }
     
@@ -42,4 +43,13 @@ public class BasicInfoService {
         return potentialRestaurants.get(0);
     }
     
+    private List<String> parseCategoryNames(String catString){
+        List<String> catList = new ArrayList<>();
+        String[] catArr = catString.split("'categorySeparator'");
+        for(int i = 0; i < catArr.length; i++){
+            catList.add(catArr[i]);
+        }
+        return catList;
+        
+    }
 }

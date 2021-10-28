@@ -48,10 +48,12 @@ public class PlanController {
         Map<String, Object> userMap = (Map<String, Object>) session.getAttribute("user");
         User user = null;
         if(userMap != null)
-            user = AuthController.convertUserMapToObject(userMap);
+            user = userRepository.findByUserId((Long) userMap.get("userId"));
             
         Restaurant restaurant = restaurantService.generateRestaurant(city, zip, cuisine, Integer.parseInt(numPeople), user);
         Weather weather = weatherService.getWeatherFromZip(zip);
+        
+        session.setAttribute("latestRestaurant", restaurant);
         
         model.addAttribute("restaurant",restaurant);   //adding the Restaurant object to a model which is accessible in the HTML pages.
         model.addAttribute("weather",restaurant);
@@ -118,11 +120,9 @@ public class PlanController {
     } 
     
     @GetMapping("/test")
-    public String test() {
-        //test to get users rating algorithms
-        //User user = userRepository.findByUserId((Long) (long) 2);
-        //List<RatingAlgorithm> alist = user.getRatingAlgorithms();
-        //System.out.println(alist.get(0).getCategory().getCategoryName());
+    public String test(HttpSession session) {
+        Restaurant r = (Restaurant) session.getAttribute("latestRestaurant");
+        System.out.println(r.getBasicInfo().getFullAddress());
         return "index";
     } 
     
