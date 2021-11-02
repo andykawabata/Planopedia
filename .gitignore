@@ -20,4 +20,5 @@ nb-configuration.xml
 *.ear
 
 # specific files
-src/main/resources/application.properties
+/src/main/resources/application.properties
+
