@@ -1,6 +1,8 @@
 package com.team.planopedia.modelsAndServices.restaurant.BasicInfo;
 
 import com.team.planopedia.API.adapters.RestaurantApiAdapter;
+import com.team.planopedia.dao.Plan;
+import com.team.planopedia.dao.RestaurantInfo;
 import com.team.planopedia.dao.User;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,5 +53,25 @@ public class BasicInfoService {
         }
         return catList;
         
+    }
+    
+    public static User generateDummyUserWithPlans(){
+        
+        final int NUM_PLANS = 30;
+        
+        User user = new User((long) 1, "bobRoss", "e@mail.com");
+        
+        for(int i=0; i<NUM_PLANS; i++){
+            Plan plan = new Plan();
+            RestaurantInfo restaurantInfo = new RestaurantInfo();
+            restaurantInfo.setRestaurantAddress("123 Street");
+            restaurantInfo.setRestaurantName("Generic Restaturant Name");
+            restaurantInfo.setRestaurantZip("12345");
+            restaurantInfo.setPlan(plan);
+        }
+        
+        
+        
+        return null;
     }
 }

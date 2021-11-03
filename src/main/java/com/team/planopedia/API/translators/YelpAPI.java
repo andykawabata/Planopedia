@@ -22,7 +22,7 @@ import org.json.*;
 
 
 
-public class YelpAPI implements APIFoodInterface {
+public class YelpAPI implements APIFoodInterface, APIReviewInterface {
 
     private static final String baseUrlYelp = "https://api.yelp.com";
     private static final String callActionYelpRestaurantSearch = "/v3/businesses/search?";
@@ -126,6 +126,7 @@ public class YelpAPI implements APIFoodInterface {
         tempRestaurantData.put("restaurantID", _businessIndex.getString("id"));
         tempRestaurantData.put("restaurantName", _businessIndex.getString("name"));
         tempRestaurantData.put("address", _businessLocation.getString("address1"));
+        tempRestaurantData.put("zipCode", _businessLocation.getString("zip_code"));
         tempRestaurantData.put("rating", Integer.toString(_businessIndex.getInt("rating")));
         tempRestaurantData.put("price", _businessIndex.getString("price"));
         tempRestaurantData.put("phoneNumber", _businessIndex.getString("display_phone"));
@@ -334,8 +335,11 @@ public class YelpAPI implements APIFoodInterface {
         tempRestaurantData.put("restaurantID", _businessIndex.getString("id"));
         tempRestaurantData.put("restaurantName", _businessIndex.getString("name"));
         tempRestaurantData.put("address", _businessLocation.getString("address1"));
+        tempRestaurantData.put("zipCode", _businessLocation.getString("zip_code"));
         tempRestaurantData.put("rating", Integer.toString(_businessIndex.getInt("rating")));
+        tempRestaurantData.put("price", _businessIndex.getString("price"));
         tempRestaurantData.put("phoneNumber", _businessIndex.getString("display_phone"));
+        tempRestaurantData.put("image_url", _businessIndex.getString("image_url"));
 
         if (categories.length() > 0) {
             int i = 0;
