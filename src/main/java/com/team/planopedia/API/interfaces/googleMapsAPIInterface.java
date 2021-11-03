@@ -14,5 +14,5 @@ public interface googleMapsAPIInterface {
      * @param _place
      * @return Returns a String with the link to do the API call
      */
-    String getMapString(String _zipCode, String _place);
+    public String getMapString(String _zipCode, String _place);
 }

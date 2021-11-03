@@ -40,6 +40,16 @@ public class OpenWeatherMapAPI implements WeatherAPIInterface {
      */
     @Override
     public Map<String, String> getWeather(String _zipCode, String _country) {
+        // Checks if any of the passed Strings contains spaces in between
+        String_Handler str_handler = new String_Handler();
+        if(str_handler.checkIfSpaces(_zipCode) == true){
+            _zipCode = str_handler.removeSpaces(_zipCode);
+        }
+        
+        if(str_handler.checkIfSpaces(_country) == true){
+            _country = str_handler.removeSpaces(_country);
+        }
+        
         Map<String, String> weatherInf = new HashMap<String, String>();
         // Build the URL 
         String urlString = baseURL + callAction + _zipCode + "," + _country + "&appid=" + API_Keys.openWeatherMapAPI();
