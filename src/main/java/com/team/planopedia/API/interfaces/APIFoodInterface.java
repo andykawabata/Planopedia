@@ -18,7 +18,7 @@ public interface APIFoodInterface {
      * @param _limit The
      * @return Restaurant data
      */
-    ArrayList<Map<String, String>> getRestaurants(String _term, String _city, int _limit);
+    public ArrayList<Map<String, String>> getRestaurants(String _term, String _city, int _limit);
 
     /**
      * @param _restaurantName The term used to look for a certain type of food
