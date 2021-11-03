@@ -1,5 +1,7 @@
 package com.team.planopedia.modelsAndServices.restaurant.BasicInfo;
 
+import java.util.List;
+
 /**
  * Class that will contain the basic information of a plan, including name, location,
  * contact information, as well as price and user ratings.
@@ -11,10 +13,13 @@ public class BasicInfo {
 
     private String locationName;
     private String fullAddress;
+    private String zipCode;
     private String phoneNumber;
     private String priceRating;
     private String starRating;
     private String restaurantId;
+    private String imageUrl;
+    private List<String> categoryNames;
 
     public BasicInfo(){
 
@@ -28,20 +33,37 @@ public class BasicInfo {
      * @param priceRating String containing plan's price rating (Format: "$", "$$", or "$$$").
      * @param starRating String containing plan's overall rating (Format: "#/#").
      */
-    public BasicInfo(String locationName, String fullAddress, String phoneNumber, String priceRating, String starRating, String restaurantId) {
+    public BasicInfo(String locationName, String fullAddress, String zipCode, String phoneNumber, String priceRating, String starRating, String restaurantId, String imageUrl, List<String> categoryNames) {
         this.locationName = locationName;
         this.fullAddress = fullAddress;
+        this.zipCode = zipCode;
         this.phoneNumber = phoneNumber;
         this.priceRating = priceRating;
         this.starRating = starRating;
         this.restaurantId = restaurantId;
+        this.imageUrl = imageUrl;
+        this.categoryNames = categoryNames;
     }
     /*-----------------Getters------------------------*/
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public List<String> getCategoryNames() {
+        return categoryNames;
+    }
+    
+    
     /**
      * Basic getter for the name of the plan's location.
      * @return String containing plan's location.
      */
+    
+    public String getZipCode() {
+        return zipCode;
+    }
+
     public String getLocationName() {
         return locationName;
     }
@@ -86,14 +108,22 @@ public class BasicInfo {
         return restaurantId;
     }
 
+    
+    
+    public void setRestaurantId(String restaurantId) {
+        this.restaurantId = restaurantId;
+    }
 
     /*-----------------Setters------------------------*/
     //Do we need these other than for testing? They should only be changed by the api or DB calls.
-
     /**
      * Basic setter for plan's location name.
      * @param locationName
      */
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public void setLocationName(String locationName) {
         this.locationName = locationName;
     }
