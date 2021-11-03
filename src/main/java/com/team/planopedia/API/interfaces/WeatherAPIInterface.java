@@ -17,6 +17,6 @@ public interface WeatherAPIInterface {
      * @param _countryCode
      * @return an HashMap with the weather information from the API
      */
-    Map<String, String> getWeather(String _zipCode, String _countryCode);
+    public Map<String, String> getWeather(String _zipCode, String _countryCode);
 }
 
