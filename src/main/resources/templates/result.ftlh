@@ -59,32 +59,29 @@
 							        
 							        <#else>
 							        </#if>
+							    </p>
                                                             <iframe id="map"  width="100%"  height="450"  style="border:0"  src=””></iframe>
-                                                            <br>
-                                                            <br>
-                                                            <br>
-                                <div id="reviews">
-    <h3>Reviews</h3>
-    <br>
-    <div class="row bg-success">
-        <div class="col-12 col-md-3 col"><h6 class="text-light">The Good News<h6/></div>
-        <div class="col-12 col-md-3 col">Rating: ${restaurant.reviews.goodReview.rating}</div>
-        <div class="col-12 col-md-3 col"></div>
-    </div>
-    <div class="review-text bg-light">
-           ${restaurant.reviews.goodReview.text}
-    </div>
-    <br/>
-    <div class="row bg-danger">
-        <div class="col-12 col-md-3 col"><h6>The Bad News<h6/></div>
-        <div class="col-12 col-md-3 col">Rating: ${restaurant.reviews.badReview.rating}</div>
-        <div class="col-12 col-md-3 col"></div>
-    </div>
-     <div class="review-text bg-light">
-            ${restaurant.reviews.badReview.text}
-     </div>
- </div>
-                            </div>
+                        							    <div class="row">
+							    	<div class="col-lg-6 modal-dialog">
+							    		<div class="modal-content rounded-6">
+							    			<div class="hero-content-wrapper modal-body p-4">
+							    			<h4>The Good News</h4>
+							    			<p>Rating: ${restaurant.reviews.goodReview.rating}</p>
+							    			<p>${restaurant.reviews.goodReview.text}</p>
+							    			</div>
+							    		</div>
+							    	</div>
+							    	<div class="col-lg-6 modal-dialog">
+							    		<div class="modal-content rounded-6">
+							    			<div class="hero-content-wrapper modal-body p-4">
+							    			<h4>The Bad News</h4>
+							    			<p>Rating: ${restaurant.reviews.badReview.rating}</p>
+							    			<p>${restaurant.reviews.badReview.text}</p>
+							    			</div>
+							    		</div>
+							    	</div>
+							    </div>
+                             
                            </div>
                         </div>                        
                     </div>
