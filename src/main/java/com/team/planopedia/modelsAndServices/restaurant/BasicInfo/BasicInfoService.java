@@ -42,7 +42,11 @@ public class BasicInfoService {
     
     private Map<String, String> pickRandomRestaurantFromList(List<Map<String, String>> potentialRestaurants){
         
-        return potentialRestaurants.get(0);
+        int n = potentialRestaurants.size();
+        int randIndex = (int) ((Math.random() *  (n)));
+        System.out.println(n);
+        System.out.println(randIndex);
+        return potentialRestaurants.get(randIndex);
     }
     
     private List<String> parseCategoryNames(String catString){
