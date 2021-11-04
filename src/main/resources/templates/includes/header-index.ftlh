@@ -50,7 +50,7 @@
                                            	    <a class="page-scroll" href="<@spring.url '/logout'/>">Logout</a>
                                            	</li>
                                            	<li class="nav-item">
-                                           		<a class="text" href="<@spring.url '/profile'/>"><h6>${user.userName}</h6></a>
+                                           		<a class="text" href="<@spring.url '/'/>"><h6>${user.userName}</h6></a>
                                            	</li>
                                            	<#else>
                                            	<li class="">
