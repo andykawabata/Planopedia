@@ -56,7 +56,7 @@ public class PlanController {
         session.setAttribute("latestRestaurant", restaurant);
         
         model.addAttribute("restaurant",restaurant);   //adding the Restaurant object to a model which is accessible in the HTML pages.
-        model.addAttribute("weather",restaurant);
+        model.addAttribute("weather",weather);
         
         return "result";
     }

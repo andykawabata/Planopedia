@@ -26,6 +26,16 @@ public class googleMapsAPI implements googleMapsAPIInterface {
      */
     @Override
     public String getMapString(String _zipCode, String _place) {
+        // Checks if any of the passed Strings contains spaces in between
+        String_Handler str_handler = new String_Handler();
+        if(str_handler.checkIfSpaces(_zipCode) == true){
+            _zipCode = str_handler.removeSpaces(_zipCode);
+        }
+        
+        if(str_handler.checkIfSpaces(_place) == true){
+            _place = str_handler.removeSpaces(_place);
+        }
+        
         String mapSrting = "";
         // Build the URL 
         String urlString = baseURL + callAction + "key=" + API_Keys.googleAPI() + "&q=" + _place + "," + _zipCode;

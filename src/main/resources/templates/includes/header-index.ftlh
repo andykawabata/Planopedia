@@ -44,14 +44,24 @@
                                             <li class="nav-item">
                                                 <a class="page-scroll" href="#contact">Contact</a>
                                             </li>
-                                            <li class="nav-item">
+                                            
                                             <#if user??>
-                                           	    <a class="page-scroll" href="<@spring.url 'oauth2/authorization/google'/>">Logout</a>
+                                            <li class="nav-item">
+                                           	    <a class="page-scroll" href="<@spring.url '/logout'/>">Logout</a>
+                                           	</li>
+                                           	<li class="nav-item">
+                                           		<a class="text" href="<@spring.url '/'/>"><h6>${user.userName}</h6></a>
+                                           	</li>
                                            	<#else>
-                                                <a class="page-scroll" href="<@spring.url 'oauth2/authorization/google'/>">Login</a>
-                                            </#if>
+                                           	<li class="">
+                                                <a class="page-scroll" href="<@spring.url '/oauth2/authorization/google'/>"><img src="<@spring.url '/assets/img/logo/google_signin.png'/>"</a>
                                             </li>
-                                        </ul>
+                                            </#if>
+                                            
+                                        </ul>                                            
+                                            	
+                                          
+
                                     </div>
                                     <!-- navbar collapse -->
                                 </nav>

@@ -13,29 +13,75 @@
         <![endif]-->
 
             <!-- ========================= hero-5 start ========================= -->
-            <div class="hero-section hero-style-5 img-bg" style="background-image: url('/assets/img/hero/hero-5/hero-bg.svg')">
+            <script>
+                setTimeout(() => {
+                    var map = document.getElementById("map");
+                    var url = "${restaurant.directions.mapUrl}";
+                    url = url.replace("amp;", "");
+                    map.setAttribute("src",url);
+                }, 100);
+                
+            </script>
+            <div class="hero-section hero-style-5 img-bg" style="background-image: url('/assets/img/hero/hero-5/hero-bg.svg'); padding: 120px 0 50px">
                 <div class="container">
+                    
                     <div class="row">
-                        <div class="col-lg-6 align-self-end">
-                            <div class="hero-image wow fadeInUp" data-wow-delay=".5s">
-                                <img src="<@spring.url '/assets/img/hero/hero-5/hero-img.svg'/>" alt="">
-                            </div>
-                        </div>
- 						<div class="col-lg-6 modal-dialog">
- 							<div class="modal-content rounded-6">
+                    <div class="col-lg-8 modal-dialog" style="max-width: 800px">
+                            <div class="modal-content rounded-6">
                              <div class="hero-content-wrapper modal-body p-4">
                                 <p class=" wow fadeInUp" data-wow-delay=".4s">
                                 	<!--These variables are obtained from the model in the ResultController (model.AddAtribute(...)) -->
+                                	<#if restaurant.basicInfo.imageUrl??>
+                                	<div style=“width:200px; height:200px”>
+                                		<img src="${restaurant.basicInfo.imageUrl}" class="img-fluid" style="max-height:400px" />
+                                	</div>
+                                	</#if>
                                 	<h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">${restaurant.basicInfo.locationName}</h2>
+                                	
                                 	<p><b>Rating:</b> ${restaurant.basicInfo.starRating}</p>
 							        <p><b>Address:</b> ${restaurant.basicInfo.fullAddress}</p>
 							        <p><b>Phone:</b> ${restaurant.basicInfo.phoneNumber}</p>
-							        <p><b>Raing:</b> ${restaurant.basicInfo.priceRating}</p>
+							        <p><b>Rating:</b> ${restaurant.basicInfo.priceRating}</p>
+                                                                <hr>
+                                                                <br>
+							        <#if weather??>
+							        <p><h6><b>Currently:</b><img src="${weather.iconURL}" /> ${weather.temp} | ${weather.description}</h6> </p>
+							        <#else>
+							        <p><b>Currently:</b> No weather info given</p>
+							        </#if>
+                                                                <br>
 							        <br>
 							        <p><a href="#0" class="button button-md radius-50 wow fadeInUp" data-wow-delay=".6s">Plan It <i class="lni lni-chevron-right"></i> </a></p>
+                                                                <br>
+                                                                <br>
+                                                                <#if restaurant.directions.mapUrl??>
+							        
+							        
+							        <#else>
+							        </#if>
 							    </p>
-                                
-                            </div>
+                                                            <iframe id="map"  width="100%"  height="450"  style="border:0"  src=””></iframe>
+                        							    <div class="row">
+							    	<div class="col-lg-6 modal-dialog">
+							    		<div class="modal-content rounded-6">
+							    			<div class="hero-content-wrapper modal-body p-4">
+							    			<h4>The Good News</h4>
+							    			<p>Rating: ${restaurant.reviews.goodReview.rating}</p>
+							    			<p>${restaurant.reviews.goodReview.text}</p>
+							    			</div>
+							    		</div>
+							    	</div>
+							    	<div class="col-lg-6 modal-dialog">
+							    		<div class="modal-content rounded-6">
+							    			<div class="hero-content-wrapper modal-body p-4">
+							    			<h4>The Bad News</h4>
+							    			<p>Rating: ${restaurant.reviews.badReview.rating}</p>
+							    			<p>${restaurant.reviews.badReview.text}</p>
+							    			</div>
+							    		</div>
+							    	</div>
+							    </div>
+                             
                            </div>
                         </div>                        
                     </div>
