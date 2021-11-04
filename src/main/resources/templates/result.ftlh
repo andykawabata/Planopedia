@@ -13,16 +13,21 @@
         <![endif]-->
 
             <!-- ========================= hero-5 start ========================= -->
-            <div class="hero-section hero-style-5 img-bg" style="background-image: url('/assets/img/hero/hero-5/hero-bg.svg')">
+            <script>
+                setTimeout(() => {
+                    var map = document.getElementById("map");
+                    var url = "${restaurant.directions.mapUrl}";
+                    url = url.replace("amp;", "");
+                    map.setAttribute("src",url);
+                }, 100);
+                
+            </script>
+            <div class="hero-section hero-style-5 img-bg" style="background-image: url('/assets/img/hero/hero-5/hero-bg.svg'); padding: 120px 0 50px">
                 <div class="container">
+                    
                     <div class="row">
-                        <div class="col-lg-6 align-self-end">
-                            <div class="hero-image wow fadeInUp" data-wow-delay=".5s">
-                                <img src="<@spring.url '/assets/img/hero/hero-5/hero-img.svg'/>" alt="">
-                            </div>
-                        </div>
- 						<div class="col-lg-6 modal-dialog">
- 							<div class="modal-content rounded-6">
+                    <div class="col-lg-8 modal-dialog" style="max-width: 800px">
+                            <div class="modal-content rounded-6">
                              <div class="hero-content-wrapper modal-body p-4">
                                 <p class=" wow fadeInUp" data-wow-delay=".4s">
                                 	<!--These variables are obtained from the model in the ResultController (model.AddAtribute(...)) -->
@@ -37,24 +42,32 @@
 							        <p><b>Address:</b> ${restaurant.basicInfo.fullAddress}</p>
 							        <p><b>Phone:</b> ${restaurant.basicInfo.phoneNumber}</p>
 							        <p><b>Rating:</b> ${restaurant.basicInfo.priceRating}</p>
+                                                                <hr>
+                                                                <br>
 							        <#if weather??>
 							        <p><h6><b>Currently:</b><img src="${weather.iconURL}" /> ${weather.temp} | ${weather.description}</h6> </p>
 							        <#else>
 							        <p><b>Currently:</b> No weather info given</p>
 							        </#if>
-							        
+                                                                <br>
 							        <br>
 							        <p><a href="#0" class="button button-md radius-50 wow fadeInUp" data-wow-delay=".6s">Plan It <i class="lni lni-chevron-right"></i> </a></p>
-							        <#if restaurant.directions.mapUrl??>
+                                                                <br>
+                                                                <br>
+                                                                <#if restaurant.directions.mapUrl??>
 							        
-							        <iframe  width="600"  height="450"  style="border:0"  loading="lazy"  allowfullscreen src=”${restaurant.directions.mapUrl}”></iframe>
+							        
 							        <#else>
 							        </#if>
-							    </p>
+                                                            <iframe id="map"  width="100%"  height="450"  style="border:0"  src=””></iframe>
+                                                            <br>
+                                                            <br>
+                                                            <br>
                                 <div id="reviews">
     <h3>Reviews</h3>
+    <br>
     <div class="row bg-success">
-        <div class="col-12 col-md-3 col">The Good News</div>
+        <div class="col-12 col-md-3 col"><h6>The Good News<h6/></div>
         <div class="col-12 col-md-3 col">Rating: ${restaurant.reviews.goodReview.rating}</div>
         <div class="col-12 col-md-3 col"></div>
     </div>
@@ -63,7 +76,7 @@
     </div>
     <br/>
     <div class="row bg-danger">
-        <div class="col-12 col-md-3 col">The Bad News</div>
+        <div class="col-12 col-md-3 col"><h6>The Bad News<h6/></div>
         <div class="col-12 col-md-3 col">Rating: ${restaurant.reviews.badReview.rating}</div>
         <div class="col-12 col-md-3 col"></div>
     </div>
