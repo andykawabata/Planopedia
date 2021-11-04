@@ -28,7 +28,7 @@
                                 	<!--These variables are obtained from the model in the ResultController (model.AddAtribute(...)) -->
                                 	<#if restaurant.basicInfo.imageUrl??>
                                 	<div style=“width:200px; height:200px”>
-                                		<img src="${restaurant.basicInfo.imageUrl}" class="img-fluid" maxWidth= />
+                                		<img src="${restaurant.basicInfo.imageUrl}" class="img-fluid" style="max-height:400px" />
                                 	</div>
                                 	</#if>
                                 	<h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">${restaurant.basicInfo.locationName}</h2>
@@ -36,16 +36,41 @@
                                 	<p><b>Rating:</b> ${restaurant.basicInfo.starRating}</p>
 							        <p><b>Address:</b> ${restaurant.basicInfo.fullAddress}</p>
 							        <p><b>Phone:</b> ${restaurant.basicInfo.phoneNumber}</p>
-							        <p><b>Raing:</b> ${restaurant.basicInfo.priceRating}</p>
+							        <p><b>Rating:</b> ${restaurant.basicInfo.priceRating}</p>
+							        <#if weather??>
+							        <p><h6><b>Currently:</b><img src="${weather.iconURL}" /> ${weather.temp} | ${weather.description}</h6> </p>
+							        <#else>
+							        <p><b>Currently:</b> No weather info given</p>
+							        </#if>
+							        
 							        <br>
 							        <p><a href="#0" class="button button-md radius-50 wow fadeInUp" data-wow-delay=".6s">Plan It <i class="lni lni-chevron-right"></i> </a></p>
 							        <#if restaurant.directions.mapUrl??>
-							        ${restaurant.directions.mapUrl}
+							        
 							        <iframe  width="600"  height="450"  style="border:0"  loading="lazy"  allowfullscreen src=”${restaurant.directions.mapUrl}”></iframe>
 							        <#else>
 							        </#if>
 							    </p>
-                                
+                                <div id="reviews">
+    <h3>Reviews</h3>
+    <div class="row bg-success">
+        <div class="col-12 col-md-3 col">The Good News</div>
+        <div class="col-12 col-md-3 col">Rating: ${restaurant.reviews.goodReview.rating}</div>
+        <div class="col-12 col-md-3 col"></div>
+    </div>
+    <div class="review-text bg-light">
+           ${restaurant.reviews.goodReview.text}
+    </div>
+    <br/>
+    <div class="row bg-danger">
+        <div class="col-12 col-md-3 col">The Bad News</div>
+        <div class="col-12 col-md-3 col">Rating: ${restaurant.reviews.badReview.rating}</div>
+        <div class="col-12 col-md-3 col"></div>
+    </div>
+     <div class="review-text bg-light">
+            ${restaurant.reviews.badReview.text}
+     </div>
+ </div>
                             </div>
                            </div>
                         </div>                        
