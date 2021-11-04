@@ -67,7 +67,7 @@
     <h3>Reviews</h3>
     <br>
     <div class="row bg-success">
-        <div class="col-12 col-md-3 col"><h6>The Good News<h6/></div>
+        <div class="col-12 col-md-3 col"><h6 class="text-light">The Good News<h6/></div>
         <div class="col-12 col-md-3 col">Rating: ${restaurant.reviews.goodReview.rating}</div>
         <div class="col-12 col-md-3 col"></div>
     </div>
