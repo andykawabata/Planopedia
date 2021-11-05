@@ -107,12 +107,12 @@ public class PlanController {
     } 
     
     @GetMapping("/rate-plan")
-    public String ratePlan(HttpSession session) {
+    public String ratePlan(HttpSession session, String planId) {
       
-        Long planId = (long) 4;
+        Long planIdLong = Long.valueOf(planId);
         int rating = 3;
         
-        Plan plan = planRepository.findByPlanId(planId);
+        Plan plan = planRepository.findByPlanId(planIdLong);
         plan.setRating(3);
         planRepository.save(plan);
         
