@@ -76,48 +76,8 @@ public class PlanController {
         return "index";
     } 
     
-    //@PostMapping("/save-plan")
-    @GetMapping("/save-plan")
-    public String savePlan(HttpSession session) {
-        
-//        User user = new User();
-//        user.setGoogleEmail("e@mail.com");
-//        user.setUserName("user1");
-//        userRepository.save(user);
 
-        User user = userRepository.findByUserId((Long) (long) 1);
 
-        Plan plan = new Plan();
-        RestaurantInfo restInfo = new RestaurantInfo();
-        restInfo.setRestaurantAddress("123 Street");
-        restInfo.setRestaurantName("Pasta Town");
-        restInfo.setRestaurantZip("12345");
-        restInfo.setPlan(plan);
-        
-        List<Category> clist = new ArrayList<>();
-        clist.add(new Category("Pasta"));
-        restInfo.setCategories(clist);
-        
-        plan.setRestaurantInfo(restInfo);
-        plan.setUser(user);
-        
-        planRepository.save(plan);
-        
-        return "index";
-    } 
-    
-    @GetMapping("/rate-plan")
-    public String ratePlan(HttpSession session, String planId) {
-      
-        Long planIdLong = Long.valueOf(planId);
-        int rating = 3;
-        
-        Plan plan = planRepository.findByPlanId(planIdLong);
-        plan.setRating(3);
-        planRepository.save(plan);
-        
-        return "index";
-    } 
     
     @GetMapping("/test")
     public String test(HttpSession session) {
