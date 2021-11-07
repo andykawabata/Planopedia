@@ -2,6 +2,7 @@ package com.team.planopedia.dao;
 
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,7 @@ public class User {
             orphanRemoval = true
     )
     @JoinColumn(name="userId")
+    @JsonManagedReference
     private List<Plan> plans = new ArrayList<>();
 
     // one user get all the ratings for there previous visits
