@@ -1,6 +1,7 @@
 package com.team.planopedia.modelsAndServices.restaurant.BasicInfo;
 
 import com.team.planopedia.API.adapters.RestaurantApiAdapter;
+import com.team.planopedia.ChoiceAlgorithm.ChoiceMaker;
 import com.team.planopedia.dao.Plan;
 import com.team.planopedia.dao.RestaurantInfo;
 import com.team.planopedia.dao.User;
@@ -20,11 +21,19 @@ public class BasicInfoService {
     public BasicInfo chooseSingleRestaurant(String city, String zip, String cuisine, int numPeople, User user){
         
         RestaurantApiAdapter api = new RestaurantApiAdapter();
-        int numRestaurants = 20;
+        int numRestaurants = 40;
         
-        List<Map<String, String>> potentialRestaurants = api.getRestaurants(cuisine, city, numRestaurants);
-        
-        Map<String, String> chosenRestaurant = this.pickRandomRestaurantFromList(potentialRestaurants);
+        ArrayList<Map<String, String>> potentialRestaurants = api.getRestaurants(cuisine, city, numRestaurants);
+        Map<String, String> chosenRestaurant;
+        if(user == null){
+             chosenRestaurant = this.pickRandomRestaurantFromList(potentialRestaurants);
+        }else{
+            ChoiceMaker choiceMaker = new ChoiceMaker();
+            chosenRestaurant = choiceMaker.makeDecision(user, potentialRestaurants);
+            if(chosenRestaurant == null){
+                chosenRestaurant = this.pickRandomRestaurantFromList(potentialRestaurants);
+            }
+        }
         
         String locationName = chosenRestaurant.get("restaurantName");
         String fullAddress = chosenRestaurant.get("address");
@@ -93,8 +102,6 @@ public class BasicInfoService {
             restaurantInfo.setRestaurantZip("12345");
             restaurantInfo.setPlan(plan);
         }
-        
-        
         
         return null;
     }
