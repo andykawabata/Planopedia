@@ -2,6 +2,7 @@ package com.team.planopedia.dao;
 
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,7 @@ public class User {
             orphanRemoval = true
     )
     @JoinColumn(name="userId")
+    @JsonManagedReference
     private List<Plan> plans = new ArrayList<>();
 
     // one user get all the ratings for there previous visits
@@ -107,6 +109,37 @@ public class User {
 //        plans.remove(plan);
 //        plan.setUser(null);
 //    }
+
+    public static User generateDummyUserWithPlans(){
+        final int NUM_PLANS = 30;
+        final String[] CATEGORIES = {"pizza","salad","bars","pasta", "cocktailbars"};
+
+        User user = new User((long) 1, "bobRoss", "e@mail.com");
+        List<Plan> planList = new ArrayList<>();
+
+        for(int i=0; i<NUM_PLANS; i++){
+            Plan plan = new Plan();
+            RestaurantInfo restaurantInfo = new RestaurantInfo();
+            restaurantInfo.setRestaurantAddress("123 Street");
+            restaurantInfo.setRestaurantName("Generic Restaturant Name");
+            restaurantInfo.setRestaurantZip("12345");
+
+            List<Category> catList = new ArrayList<>();
+            int randCatIndex = (int) ((Math.random() * (CATEGORIES.length)));
+            catList.add(new Category(CATEGORIES[randCatIndex]));
+            randCatIndex = (int) ((Math.random() * (CATEGORIES.length)));
+            catList.add(new Category(CATEGORIES[randCatIndex]));
+            restaurantInfo.setCategories(catList);
+
+            plan.setRestaurantInfo(restaurantInfo);
+            plan.setRating((int) ((Math.random() * (5 - 1)) + 1));
+
+            planList.add(plan);
+        }
+        user.setPlans(planList);
+
+        return user;
+    }
 
 }
 

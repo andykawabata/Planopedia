@@ -1,5 +1,7 @@
 package com.team.planopedia.dao;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,7 @@ public class RestaurantInfo {
     private String restaurantZip;
 
     @OneToOne(mappedBy = "restaurantInfo")
+    @JsonManagedReference
     private Plan plan;
 
 

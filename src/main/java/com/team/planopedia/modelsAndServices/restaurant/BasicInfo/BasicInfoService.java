@@ -40,6 +40,26 @@ public class BasicInfoService {
 
     }
     
+    public BasicInfo getRestaurantByName(String restaurantName, String zip){
+        
+       RestaurantApiAdapter api = new RestaurantApiAdapter();
+        ArrayList<Map<String, String>> rList = api.getRestaurantSearchByName(restaurantName, zip, 1);
+        Map<String, String> chosenRestaurant = rList.get(0);
+        
+        String locationName = chosenRestaurant.get("restaurantName");
+        String fullAddress = chosenRestaurant.get("address");
+        String zipCode = chosenRestaurant.get("zipCode");
+        String phoneNumber = chosenRestaurant.get("phoneNumber");
+        String priceRating = chosenRestaurant.get("price");
+        String starRating = chosenRestaurant.get("rating");
+        String restaurantId = chosenRestaurant.get("restaurantID");
+        String imageUrl = chosenRestaurant.get("image_url");
+        List<String> categoryNames = parseCategoryNames(chosenRestaurant.get("categories"));
+
+        return new BasicInfo(locationName, fullAddress, zipCode, phoneNumber, priceRating, starRating, restaurantId, imageUrl, categoryNames);
+
+    }
+    
     private Map<String, String> pickRandomRestaurantFromList(List<Map<String, String>> potentialRestaurants){
         
         int n = potentialRestaurants.size();
