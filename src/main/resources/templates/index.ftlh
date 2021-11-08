@@ -269,8 +269,8 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>John Doe</h6>
-                                <p>Product Designer</p>
+                                <h6>Andrew Kawabata</h6>
+                                <p>Team Member</p>
                             </div>
                         </div>
                     </div>
@@ -296,8 +296,8 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>David Endow</h6>
-                                <p>Creative Designer</p>
+                                <h6>Michael Leonard</h6>
+                                <p>Team Member</p>
                             </div>
                         </div>
                     </div>
@@ -323,8 +323,8 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>Jonathon Smith</h6>
-                                <p>Brand Designer</p>
+                                <h6>Dan Luo</h6>
+                                <p>Team Member</p>
                             </div>
                         </div>
                     </div>
@@ -350,11 +350,65 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>Gray Simon</h6>
-                                <p>Frontend Developer</p>
+                                <h6>Nimra Samis</h6>
+                                <p>Team Member</p>
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-3 col-md-6 col-sm-10">
+                        <div class="single-team wow fadeInUp" data-wow-delay=".8s">
+                            <div class="image">
+                                <img src="assets/img/team/team-4/team-4.jpg" alt="">
+                                <div class="overlay">
+                                    <ul class="socials">
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h6>Arturo Serdan</h6>
+                                <p>Team Member</p>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-xl-3 col-md-6 col-sm-10">
+                        <div class="single-team wow fadeInUp" data-wow-delay=".8s">
+                            <div class="image">
+                                <img src="assets/img/team/team-4/team-4.jpg" alt="">
+                                <div class="overlay">
+                                    <ul class="socials">
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h6>Jeff Williams</h6>
+                                <p>Team Member</p>
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
 
             </div>
