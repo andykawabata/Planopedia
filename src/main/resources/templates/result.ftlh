@@ -30,6 +30,9 @@
                             <div class="modal-content rounded-6">
                              <div class="hero-content-wrapper modal-body p-4">
                                 <p class=" wow fadeInUp" data-wow-delay=".4s">
+                                	<form method="post" action="/user/save-plan">
+                                	<button type="submit">Save Plan</button>
+                                	</form>
                                 	<!--These variables are obtained from the model in the ResultController (model.AddAtribute(...)) -->
                                 	<#if restaurant.basicInfo.imageUrl??>
                                 	<div style=“width:200px; height:200px”>
@@ -41,7 +44,7 @@
                                 	<p><b>Rating:</b> ${restaurant.basicInfo.starRating}</p>
 							        <p><b>Address:</b> ${restaurant.basicInfo.fullAddress}</p>
 							        <p><b>Phone:</b> ${restaurant.basicInfo.phoneNumber}</p>
-							        <p><b>Rating:</b> ${restaurant.basicInfo.priceRating}</p>
+							        <p><b>Price:</b> ${restaurant.basicInfo.priceRating}</p>
                                                                 <hr>
                                                                 <br>
 							        <#if weather??>

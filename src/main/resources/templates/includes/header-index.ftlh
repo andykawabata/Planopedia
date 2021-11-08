@@ -54,7 +54,7 @@
                                            	</li>
                                            	<#else>
                                            	<li class="">
-                                                <a class="page-scroll" href="<@spring.url '/oauth2/authorization/google'/>"><img src="<@spring.url '/assets/img/logo/google_signin.png'/>"</a>
+                                                <a class="page-scroll" href="<@spring.url '/oauth2/authorization/google'/>"><img src="<@spring.url '/assets/img/logo/google_signin.png'/>"></a>
                                             </li>
                                             </#if>
                                             
