@@ -131,19 +131,29 @@
                                 <img src="assets/img/gallery/gallery-4/Google_2015_logo.svg" alt="">
                             </div>
                             <div class="info">
-                                <h5>Social Login via Google?</h5>
-                                <p>That's the idea at the moment.</p>
+                                <h5>Google Maps and User Login</h5>
+                                <p>"Google Maps is a web mapping platform and consumer application offered by Google. It offers satellite imagery, aerial photography, street maps, 360° interactive panoramic views of streets (Street View), real-time traffic conditions, and route planning for traveling by foot, car, air (in beta) and public transportation."</p>
+                                <p>"	Google Identity Services is our new cross-platform sign-in SDK for Web and Android apps, supporting and streamlining multiple types of credentials."</p>
+                                <ul>
+                                	<li><a href="https://en.wikipedia.org/wiki/Google_Maps" target="_new">Google Maps Wikipedia Entry</a></li>
+                                	<li><a href="https://developers.google.com/maps/documentation/embed/get-started" target="_new">Get Started with Google Maps</a></li>
+                                	<li><a href="https://developers.google.com/identity/gsi/web" target="_new">Google Identity Services</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="single-gallery wow fadeInUp" data-wow-delay=".6s">
                             <div class="image">
-                                <img src="assets/img/gallery/gallery-4/Weather-few-clouds.svg" alt="">
+                                <img src="assets/img/gallery/gallery-4/OpenWeather-Logo0.svg" alt="">
                             </div>
                             <div class="info">
-                                <h5>Weather API?</h5>
-                                <p>JFW: SVG image deliberately out of propotion with the rest.  Draw attention that this needs udpating</p>
+                                <h5>OpenWeatherMap</h5>
+                                <p>"OpenWeatherMap is an online service, owned by OpenWeather Ltd, that provides global weather data via API, including current weather data, forecasts, nowcasts and historical weather data for any geographical location."</p>
+                                <ul class="links">
+                                  <li><a href="https://en.wikipedia.org/wiki/OpenWeatherMap" target="_new">Wikipedia</a></li>
+                                  <li><a href="https://openweathermap.org/" target="_new">OpenWeatherMap</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -158,7 +168,14 @@
                 <div class="row justify-content-center">
                     <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
                         <div class="section-title text-center mb-50">
-                            <h3 class="mb-15">Let's Get Started!</h3>
+                        		<#if plans??>
+                        			You have plans!
+                        		<#else>
+                        			You have no plans!
+                        		</#if>
+                        	
+                            		<h3 class="mb-15">Let's Get Started!</h3>
+                            
                             <p>Select the type of cuisine you want, number of guests, and Planopedia does the rest!</p>
                         </div>
                     </div>
@@ -178,15 +195,14 @@
                                         <div class="single-input">
                                         	<select class="form-select" name="cuisine" required>
                                         				<option selected disabled value	>Cuisine</option>
-                                                        <option value="African">African</option>
-                                                        <option value="Brazilian">Brazilian</option>
+                                                        <option value="American">American</option>
                                                         <option value="Chinese">Chinese</option>
-                                                        <option value="Diner">Diner</option>
-                                                        <option value="Ethiopian">Ethiopian</option>
                                                         <option value="French">French</option>
-                                                        <option value="German">German</option>
-                                                        <option value="Italian">Hungarian</option>
-                                                        <option value="Mexican">Icelandic</option>
+                                                        <option value="Italian">Italian</option>
+                                                        <option value="Jamaican">Jamaican</option>
+                                                        <option value="Japanese">Japanese</option>                                                        
+                                                        <option value="Mexican">Mexican</option>
+                                                        <option value="Mediterranean">Mediterranean</option>
                                              </select>
                                        	</div>
                                         <div class="single-input">
@@ -253,8 +269,8 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>John Doe</h6>
-                                <p>Product Designer</p>
+                                <h6>Andrew Kawabata</h6>
+                                <p>Team Member</p>
                             </div>
                         </div>
                     </div>
@@ -280,8 +296,8 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>David Endow</h6>
-                                <p>Creative Designer</p>
+                                <h6>Michael Leonard</h6>
+                                <p>Team Member</p>
                             </div>
                         </div>
                     </div>
@@ -307,8 +323,8 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>Jonathon Smith</h6>
-                                <p>Brand Designer</p>
+                                <h6>Dan Luo</h6>
+                                <p>Team Member</p>
                             </div>
                         </div>
                     </div>
@@ -334,11 +350,65 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>Gray Simon</h6>
-                                <p>Frontend Developer</p>
+                                <h6>Nimra Samis</h6>
+                                <p>Team Member</p>
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-3 col-md-6 col-sm-10">
+                        <div class="single-team wow fadeInUp" data-wow-delay=".8s">
+                            <div class="image">
+                                <img src="assets/img/team/team-4/team-4.jpg" alt="">
+                                <div class="overlay">
+                                    <ul class="socials">
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h6>Arturo Serdan</h6>
+                                <p>Team Member</p>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="col-xl-3 col-md-6 col-sm-10">
+                        <div class="single-team wow fadeInUp" data-wow-delay=".8s">
+                            <div class="image">
+                                <img src="assets/img/team/team-4/team-4.jpg" alt="">
+                                <div class="overlay">
+                                    <ul class="socials">
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
+                                        </li>
+                                        <li>
+                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h6>Jeff Williams</h6>
+                                <p>Team Member</p>
+                            </div>
+                        </div>
+                    </div>                    
                 </div>
 
             </div>
@@ -443,7 +513,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="contact-form-wrapper">
-                            <form action="assets/php/contact.php" method="POST">
+                            <form action="/" method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="single-input">
@@ -477,7 +547,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-button">
-                                            <button type="submit" class="button"> <i class="lni lni-telegram-original"></i> Submit</button>
+                                            <button type="reset" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="lni lni-telegram-original"></i> Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -485,6 +555,8 @@
                         </div>
 
                     </div>
+
+
 
                     <div class="col-lg-4">
                         <div class="left-wrapper">
@@ -507,7 +579,7 @@
                                         </div>
                                         <div class="text">
                                             <p>support@planopedia.com</p>
-                                            <p>admin@yplanopedia.com</p>
+                                            <p>admin@planopedia.com</p>
                                         </div>
                                     </div>
                                 </div>
@@ -543,6 +615,26 @@
             </div>
         </section>
         <!-- ========================= clients-logo end ========================= -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="0" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Email Totally Sent!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Perfect!
+        We are absolutely excited to know you've used our contact functionality!  Our Support Staff at /dev/null will proccess your contact in the order it was received!  Expect a response in the amount of time anyone would expect one from /dev/null!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 <#include "/includes/footer.ftlh">
 </body>
