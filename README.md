@@ -11,7 +11,7 @@ Application must be connected to database. Navigate to `src/main/resources/appli
 
 * **Andrew Kawabata** - [Github](https://github.com/andykawabata)
 * **Michael Leonard** - [Github](https://github.com/mcleoar)
-* **Dan Luo** - [Github]() 
+* **Dan Luo** - [Github](https://github.com/Ddan-X) 
 * **Nimra Sami** - [Github](https://github.com/nimrasami)
 * **Arturo Serdan** - [Github](https://github.com/aaserdan)
 * **Jeffrey Williams** - [Github](https://github.com/jfwillia)
