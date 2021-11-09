@@ -47,8 +47,10 @@ public class PlanController {
         // user variable is set to User object if session exisists, else it is null
         Map<String, Object> userMap = (Map<String, Object>) session.getAttribute("user");
         User user = null;
-        if(userMap != null)
-            user = userRepository.findByUserId((Long) userMap.get("userId"));
+        if(userMap != null){
+            String userEmail = (String) userMap.get("googleEmail");
+            user = userRepository.findByGoogleEmail(userEmail);
+        }
             
         Restaurant restaurant = restaurantService.generateRestaurant(city, zip, cuisine, Integer.parseInt(numPeople), user);
         Weather weather = weatherService.getWeatherFromZip(zip);

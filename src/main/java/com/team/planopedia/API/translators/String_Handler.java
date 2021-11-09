@@ -27,7 +27,7 @@ public class String_Handler {
             }
         }
         // Returns the new String
-        return withoutSpaces;
+        return _originalString.replaceAll(" ", "_").toLowerCase();
     }
     
     
