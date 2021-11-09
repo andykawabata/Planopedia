@@ -25,6 +25,7 @@ public class BasicInfoService {
         
         ArrayList<Map<String, String>> potentialRestaurants = api.getRestaurants(cuisine, city, numRestaurants);
         Map<String, String> chosenRestaurant;
+        
         if(user == null){
              chosenRestaurant = this.pickRandomRestaurantFromList(potentialRestaurants);
         }else{
