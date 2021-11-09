@@ -21,6 +21,22 @@
                     <div class="col-lg-8 modal-dialog" style="max-width: 800px">
                             <div class="modal-content rounded-6">
                              <div class="hero-content-wrapper modal-body p-4">
+                             <p>
+                             <#if user??>
+                             <h6>Plans by ${user.userName}</h6>
+                             <br>
+                             	<ul>
+                             		<#list plans as plan>
+                             			<li><a href="/user/single-plan?planId=${plan.planId}">${plan.restaurantInfo.restaurantName}</a></li>
+                             	   	<#else>
+                             		No plans
+                             		</#list>
+                             	</ul>
+                             
+                             <#else>
+                             	Please <a class="page-scroll" href="<@spring.url '/oauth2/authorization/google'/>">login</a> to see your saved plans!
+                             </#if>
+                             </p>
                  			    </div>
                            </div>
                         </div>                        
