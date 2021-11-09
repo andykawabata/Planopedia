@@ -27,7 +27,7 @@
                              <br>
                              	<ul>
                              		<#list plans as plan>
-                             			<li><a href="/user/single-plan?planId=${plan.planId}">${plan.restaurantInfo.restaurantName}</a></li>
+                             			<li><a href="/user/single-plan?planId=${plan.planId}">${plan.restaurantInfo.restaurantName} | Rating: ${plan.rating}</a></li>
                              	   	<#else>
                              		No plans
                              		</#list>
