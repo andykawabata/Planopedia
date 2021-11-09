@@ -14,4 +14,4 @@ Application must be connected to database. Navigate to `src/main/resources/appli
 * **Dan Luo** - [Github]() 
 * **Nimra Sami** - [Github](https://github.com/nimrasami)
 * **Arturo Serdan** - [Github](https://github.com/aaserdan)
-* **Jeffrey Williams** - [Github]()
+* **Jeffrey Williams** - [Github](https://github.com/jfwillia)
