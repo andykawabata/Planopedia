@@ -50,11 +50,11 @@
                                            	    <a class="page-scroll" href="<@spring.url '/logout'/>">Logout</a>
                                            	</li>
                                            	<li class="nav-item">
-                                           		<a class="text" href="<@spring.url '/'/>"><h6>${user.userName}</h6></a>
+                                           		<a class="text" href="<@spring.url '/user/saved-plans'/>"><h6>${user.userName}</h6></a>
                                            	</li>
                                            	<#else>
                                            	<li class="">
-                                                <a class="page-scroll" href="<@spring.url '/oauth2/authorization/google'/>"><img src="<@spring.url '/assets/img/logo/google_signin.png'/>"</a>
+                                                <a class="page-scroll" href="<@spring.url '/oauth2/authorization/google'/>"><img src="<@spring.url '/assets/img/logo/google_signin.png'/>"></a>
                                             </li>
                                             </#if>
                                             
