@@ -27,12 +27,12 @@ public class BasicInfoService {
         Map<String, String> chosenRestaurant;
         
         if(user == null){
-             chosenRestaurant = this.pickRandomRestaurantFromList(potentialRestaurants);
+             chosenRestaurant = pickRandomRestaurantFromList(potentialRestaurants);
         }else{
             ChoiceMaker choiceMaker = new ChoiceMaker();
             chosenRestaurant = choiceMaker.makeDecision(user, potentialRestaurants);
             if(chosenRestaurant == null){
-                chosenRestaurant = this.pickRandomRestaurantFromList(potentialRestaurants);
+                chosenRestaurant = pickRandomRestaurantFromList(potentialRestaurants);
             }
         }
         
