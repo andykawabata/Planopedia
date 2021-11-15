@@ -13,6 +13,7 @@
         <![endif]-->
 
             <!-- ========================= hero-5 start ========================= -->
+            <#if restaurant??>
             <script>
                 setTimeout(() => {
                     var map = document.getElementById("map");
@@ -93,6 +94,9 @@
                     </div>
                 </div>
             </div>
+            <#else>
+            No Restaurant found!
+            </#if>
             <!-- ========================= hero-5 end ========================= -->
 
     </section>
