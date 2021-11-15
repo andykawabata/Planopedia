@@ -134,7 +134,7 @@
                         		<#if plans??>
                         			You have plans!
                         		<#else>
-                        			You have no plans!
+                        			<!--You have no plans!-->
                         		</#if>
                         	
                             		<h3 class="mb-15">Let's Get Started!</h3>
