@@ -83,6 +83,7 @@ public class UserController {
         model.addAttribute("restaurant",restaurant);   //adding the Restaurant object to a model which is accessible in the HTML pages.
         model.addAttribute("weather",weather);
         model.addAttribute("planId", planId);
+        model.addAttribute("plan", plan);
        
         return "single-plan";
     }

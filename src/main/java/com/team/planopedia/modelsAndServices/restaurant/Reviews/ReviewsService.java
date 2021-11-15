@@ -4,6 +4,8 @@ import com.team.planopedia.API.adapters.RestaurantApiAdapter;
 import com.team.planopedia.API.adapters.ReviewApiAdapter;
 import com.team.planopedia.modelsAndServices.restaurant.BasicInfo.BasicInfo;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,8 +35,17 @@ public class ReviewsService {
     // picks 2 reviews from list. One good, one bad.
     private Map<String, SingleReview> chooseGoodAndBadReviews(List<Map<String, String>> reviewList){
         
+        Comparator<Map<String, String>> mapComparator;
+        mapComparator = new Comparator<Map<String, String>>() {
+            public int compare(Map<String, String> m1, Map<String, String> m2) {
+                return m1.get("rating").compareTo(m2.get("rating"));
+            }
+        };
+
+        Collections.sort(reviewList, mapComparator);
+        
         Map<String, String> review1 =  reviewList.get(0);
-        Map<String, String> review2 =  reviewList.get(1);
+        Map<String, String> review2 =  reviewList.get(reviewList.size()-1);
         
         SingleReview badReview = new SingleReview(review1.get("rating"), review1.get("text"), review1.get("name"));
         SingleReview goodReview = new SingleReview(review2.get("rating"), review2.get("text"), review2.get("name"));
