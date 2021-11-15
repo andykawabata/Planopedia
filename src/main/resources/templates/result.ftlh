@@ -14,6 +14,7 @@
 
             <!-- ========================= hero-5 start ========================= -->
             <#if restaurant??>
+            <#setting url_escaping_charset='UTF-8'>
             <script>
                 setTimeout(() => {
                     var map = document.getElementById("map");
@@ -62,7 +63,7 @@
                                                                 <br>
                                                                 <br>
                                                                 <#if restaurant.directions.mapUrl??>
-							        
+							        								<iframe id="map"  width="100%"  height="450"  style="border:0"  src="”></iframe>
 							        
 							        <#else>
 							        </#if>
