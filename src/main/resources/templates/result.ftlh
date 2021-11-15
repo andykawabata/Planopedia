@@ -13,6 +13,7 @@
         <![endif]-->
 
             <!-- ========================= hero-5 start ========================= -->
+            <#if restaurant??>
             <script>
                 setTimeout(() => {
                     var map = document.getElementById("map");
@@ -52,8 +53,12 @@
 							        </#if>
                                                                 <br>
 							        <br>
+							        <#if user??>
 							        <p><form method="post" action="/user/save-plan">
 							      <button type="submit" class="button button-md radius-50 wow fadeInUp" data-wow-delay=".6s">Plan It <i class="lni lni-chevron-right"></i> </button></p>
+							      <#else>
+							        <p><a href="<@spring.url '/oauth2/authorization/google'/>" class="button button-md radius-50 wow fadeInUp" data-wow-delay=".6s">Create an account now and start making plans! <i class="lni lni-chevron-right"></i></a></p> 
+							      </#if>
                                                                 <br>
                                                                 <br>
                                                                 <#if restaurant.directions.mapUrl??>
@@ -89,6 +94,9 @@
                     </div>
                 </div>
             </div>
+            <#else>
+            No Restaurant found!
+            </#if>
             <!-- ========================= hero-5 end ========================= -->
 
     </section>

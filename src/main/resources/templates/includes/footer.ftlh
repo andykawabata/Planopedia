@@ -9,7 +9,7 @@
                         <div class="logo">
                             <a href="#0"> <img src="<@spring.url '/assets/img/logo/planopedia_blau.svg'/>" alt=""> </a>
                         </div>
-                        <p class="desc">A UNCG Fall 2021 CSC-390 Project.</p>
+                        <p class="desc">A UNCG Fall 2021 CSC-490 Project.</p>
                     </div>
         	</div>
         <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">

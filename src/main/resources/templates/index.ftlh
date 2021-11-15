@@ -16,44 +16,7 @@
         <!-- ========================= hero-section-wrapper-6 end ========================= -->
 
           <!-- ========================= feature style-5 end ========================= -->
-
-        <!-- ========================= about style-4 start ========================= -->
-        <section id="about" class="about-section about-style-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="about-content-wrapper">
-                            <div class="section-title mb-30">
-                                <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">The future of planning starts here</h3>
-                                <p class="wow fadeInUp" data-wow-delay=".3s">Stop wasting you and your friends' time, lobbing questions at each other about where to eat. Just follow these 3 easy steps!</p>
-                            </div>
-                            <ul>
-                                <li class="wow fadeInUp" data-wow-delay=".35s">
-                                    <i class="lni lni-checkmark-circle"></i>
-                                    Choose a cuisine
-                                </li>
-                                <li class="wow fadeInUp" data-wow-delay=".4s">
-                                    <i class="lni lni-checkmark-circle"></i>
-                                    Select the number of folks going
-                                </li>
-                                <li class="wow fadeInUp" data-wow-delay=".45s">
-                                    <i class="lni lni-checkmark-circle"></i>
-                                    Click Plan!
-                                </li>
-                            </ul>
-                            <a href="#0" class="button button-lg radius-10 wow fadeInUp" data-wow-delay=".5s">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-7 col-lg-6">
-                        <div class="about-image text-lg-right wow fadeInUp" data-wow-delay=".5s">
-                            <img src="assets/img/about/about-4/about-img.svg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ========================= about style-4 end ========================= -->
-
+  
         <!-- ========================= gallery style-4 start ========================= -->
         <section id="gallery" class="gallery-section gallery-style-4 bg-white">
             <div class="container">
@@ -195,6 +158,7 @@
                                         <div class="single-input">
                                         	<select class="form-select" name="cuisine" required>
                                         				<option selected disabled value	>Cuisine</option>
+                                        				<option value="">Any</option>
                                                         <option value="American">American</option>
                                                         <option value="Chinese">Chinese</option>
                                                         <option value="French">French</option>

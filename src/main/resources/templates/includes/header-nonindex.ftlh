@@ -22,9 +22,6 @@
                                                 <a class="page-scroll active" href="/#home">Home</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="page-scroll" href="/#about">About</a>
-                                            </li>
-                                            <li class="nav-item">
                                                 <a class="page-scroll" href="/#gallery">Technologies</a>
                                             </li>
 
