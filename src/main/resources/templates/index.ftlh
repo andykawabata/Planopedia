@@ -158,6 +158,7 @@
                                         <div class="single-input">
                                         	<select class="form-select" name="cuisine" required>
                                         				<option selected disabled value	>Cuisine</option>
+                                        				<option value="">Any</option>
                                                         <option value="American">American</option>
                                                         <option value="Chinese">Chinese</option>
                                                         <option value="French">French</option>
