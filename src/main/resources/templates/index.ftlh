@@ -140,6 +140,9 @@
                             		<h3 class="mb-15">Let's Get Started!</h3>
                             
                             <p>Select the type of cuisine you want, number of guests, and Planopedia does the rest!</p>
+                            <#if error??>
+                                <p style="color:red;">${error}</p>
+                            </#if>
                         </div>
                     </div>
                 </div>

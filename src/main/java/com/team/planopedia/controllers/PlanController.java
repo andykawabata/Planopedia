@@ -53,6 +53,9 @@ public class PlanController {
         }
             
         Restaurant restaurant = restaurantService.generateRestaurant(city, zip, cuisine, Integer.parseInt(numPeople), user);
+        if(restaurant == null){
+            return "redirect:/?error=true#plan";
+        }
         Weather weather = weatherService.getWeatherFromZip(zip);
         
         session.setAttribute("latestRestaurant", restaurant);

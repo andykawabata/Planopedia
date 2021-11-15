@@ -25,6 +25,7 @@ public class RestaurantService {
     public Restaurant generateRestaurant(String city, String zip, String cuisine, int numPeople, User user){
         
         BasicInfo basicInfo = basicInfoService.chooseSingleRestaurant(city, zip, cuisine, 0, user);
+        if(basicInfo == null) return null;
         Reviews reviews = reviewsService.getReviewsFromBasicInfo(basicInfo);
         Directions directions = directionsService.getMapUrl(basicInfo.getLocationName(), basicInfo.getZipCode() );
         System.out.println(basicInfo.getCategoryNames().get(0));

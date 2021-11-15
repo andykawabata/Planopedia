@@ -36,6 +36,8 @@ public class BasicInfoService {
             }
         }
         
+        if(chosenRestaurant == null) return null;
+        
         String locationName = chosenRestaurant.get("restaurantName");
         String fullAddress = chosenRestaurant.get("address");
         String zipCode = chosenRestaurant.get("zipCode");
@@ -73,6 +75,7 @@ public class BasicInfoService {
     private Map<String, String> pickRandomRestaurantFromList(List<Map<String, String>> potentialRestaurants){
         
         int n = potentialRestaurants.size();
+        if(n == 0){ return null; }
         int randIndex = (int) ((Math.random() *  (n)));
         System.out.println(n);
         System.out.println(randIndex);
