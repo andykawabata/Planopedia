@@ -72,7 +72,7 @@ public class BasicInfoService {
 
     }
     
-    private Map<String, String> pickRandomRestaurantFromList(List<Map<String, String>> potentialRestaurants){
+    public static Map<String, String> pickRandomRestaurantFromList(List<Map<String, String>> potentialRestaurants){
         
         int n = potentialRestaurants.size();
         if(n == 0){ return null; }
