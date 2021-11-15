@@ -314,7 +314,7 @@
                                 </div>
                             </div>
                             <div class="info">
-                                <h6>Nimra Samis</h6>
+                                <h6>Nimra Sami</h6>
                                 <p>Team Member</p>
                             </div>
                         </div>
