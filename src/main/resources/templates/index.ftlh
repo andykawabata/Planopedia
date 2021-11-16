@@ -208,7 +208,7 @@
                     <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
                         <div class="section-title text-center mb-60">
                             <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Our Team</h3>
-                            <p class="wow fadeInUp" data-wow-delay=".4s">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                            <p class="wow fadeInUp" data-wow-delay=".4s">As six young college students, we often find it hard to plan out a perfect date. We realize that there are thousands of students across the United States just like us, so by creating this application we hope to ease this problem for not only young college students but everyone out there.</p>
                         </div>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                     <div class="col-xl-3 col-md-6 col-sm-10">
                         <div class="single-team wow fadeInUp" data-wow-delay=".2s">
                             <div class="image">
-                                <img src="assets/img/team/team-4/team-1.jpg" alt="">
+                                <img src="assets/img/team/team-6/AndyKawabata.jpg" alt="">
                                 <div class="overlay">
                                     <ul class="socials">
                                         <li>
@@ -244,7 +244,7 @@
                     <div class="col-xl-3 col-md-6 col-sm-10">
                         <div class="single-team wow fadeInUp" data-wow-delay=".4s">
                             <div class="image">
-                                <img src="assets/img/team/team-4/team-2.jpg" alt="">
+                                <img src="assets/img/team/team-6/MichaelLeonard.jpg" alt="">
                                 <div class="overlay">
                                     <ul class="socials">
                                         <li>
@@ -271,7 +271,7 @@
                     <div class="col-xl-3 col-md-6 col-sm-10">
                         <div class="single-team wow fadeInUp" data-wow-delay=".6s">
                             <div class="image">
-                                <img src="assets/img/team/team-4/team-3.jpg" alt="">
+                                <img src="assets/img/team/team-6/DanLuo.jpg" alt="">
                                 <div class="overlay">
                                     <ul class="socials">
                                         <li>
@@ -298,7 +298,7 @@
                     <div class="col-xl-3 col-md-6 col-sm-10">
                         <div class="single-team wow fadeInUp" data-wow-delay=".8s">
                             <div class="image">
-                                <img src="assets/img/team/team-4/team-4.jpg" alt="">
+                                <img src="assets/img/team/team-6/NimraSami.jpg" alt="">
                                 <div class="overlay">
                                     <ul class="socials">
                                         <li>
@@ -325,7 +325,7 @@
                     <div class="col-xl-3 col-md-6 col-sm-10">
                         <div class="single-team wow fadeInUp" data-wow-delay=".8s">
                             <div class="image">
-                                <img src="assets/img/team/team-4/team-4.jpg" alt="">
+                                <img src="assets/img/team/team-6/ArturoSerdan0.jpg" alt="">
                                 <div class="overlay">
                                     <ul class="socials">
                                         <li>
@@ -352,7 +352,7 @@
                                         <div class="col-xl-3 col-md-6 col-sm-10">
                         <div class="single-team wow fadeInUp" data-wow-delay=".8s">
                             <div class="image">
-                                <img src="assets/img/team/team-4/team-4.jpg" alt="">
+                                <img src="assets/img/team/team-6/JeffWilliams0.jpg" alt="">
                                 <div class="overlay">
                                     <ul class="socials">
                                         <li>
