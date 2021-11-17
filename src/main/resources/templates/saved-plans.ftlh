@@ -27,7 +27,12 @@
                              <br>
                              	<ul>
                              		<#list plans as plan>
-                             			<li><a href="/user/single-plan?planId=${plan.planId}">${plan.restaurantInfo.restaurantName} | Rating: ${plan.rating}</a></li>
+                             			<li>
+                                                    <a href="/user/single-plan?planId=${plan.planId}">
+                                                        <span style="display: inline-block; width: 250px">${plan.restaurantInfo.restaurantName}</span> | <#if plan.rating != 0> Rating: ${plan.rating} <#else> Not Rated </#if>
+                                                    </a>
+                                                </li>
+                                                <hr>
                              	   	<#else>
                              		No plans
                              		</#list>

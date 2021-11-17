@@ -42,7 +42,7 @@
                                 	<h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">${restaurant.basicInfo.locationName}</h2>
                                 	
                                 	<p><b>Rating:</b> ${restaurant.basicInfo.starRating}</p>
-                                	<#if plan??>
+                                	<#if plan.rating != 0>
                                 	<p><b>Your Rating:</b> ${plan.rating}</p>
                                 	</#if>
 							        <p><b>Address:</b> ${restaurant.basicInfo.fullAddress}</p>
@@ -60,7 +60,7 @@
 							        <p><form method="post" action="/user/rate-plan" class="needs-validation">
                                 	<input type="hidden" name="planId" value="${planId}" />
                                 	<div class="form-group">
-                  					
+	
                                 	<select name="rating" class="form-select-lg" required>  
                                             			<option selected disabled value>Rating</option>           	
                                                         <option value="1">1</option>
@@ -70,7 +70,8 @@
                                                         <option value="5">5</option>
                                                     </select>
                                                     <button type="submit" class="button button-md radius-50 wow fadeInUp" data-wow-delay=".6s" >Rate Plan</button></div>
-                                	</form>
+                                	
+                                        </form>
                                 	</div>
                                 	</p>
                                                                 <br>
