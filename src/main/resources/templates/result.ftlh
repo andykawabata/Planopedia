@@ -20,6 +20,7 @@
                     var map = document.getElementById("map");
                     var url = "${restaurant.directions.mapUrl}";
                     url = url.replace("amp;", "");
+                    url = url.replace("&amp;", "and");
                     map.setAttribute("src",url);
                 }, 100);
                 
