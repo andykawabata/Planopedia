@@ -7,17 +7,23 @@ import java.util.List;
 @Entity
 @Table(name="category")
 public class Category {
-    
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
     private String categoryName;
 
-
+    /*
+    many to one relationship, restaurantInfoId as FK
+     */
     @ManyToOne
     @JoinColumn(name = "restaurantInfoId")
     RestaurantInfo restaurantInfo;
 
+    /**
+     * Constructors, getters and setters
+     */
     public Category() {
     }
 

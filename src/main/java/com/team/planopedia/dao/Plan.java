@@ -23,6 +23,10 @@ public class Plan {
     @JsonBackReference
     private RestaurantInfo restaurantInfo;
 
+    /*
+    Two-way to define the manyToOne at plan
+    oneTomany define at user
+     */
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId")
     @JsonBackReference

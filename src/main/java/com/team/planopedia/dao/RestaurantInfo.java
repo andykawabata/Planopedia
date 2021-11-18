@@ -17,12 +17,16 @@ public class RestaurantInfo {
     private String restaurantAddress;
     private String restaurantZip;
 
+    /**
+     * oneToOne relationship
+     * one plan only have one restaurantInfo
+     */
     @OneToOne(mappedBy = "restaurantInfo")
     @JsonManagedReference
     private Plan plan;
 
 
-    //resturantInfo can have many categories, to get all categories for the resturantInfo
+    //restaurantInfo can have many categories, to get all categories for the resturantInfo
     @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true
