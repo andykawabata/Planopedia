@@ -24,6 +24,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * Controller handling all user functions.
+ * @author andrewkawabata
+ */
 @Controller
 @RequestMapping(path = "/user")
 public class UserController {

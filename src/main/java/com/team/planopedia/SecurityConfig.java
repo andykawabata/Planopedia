@@ -1,3 +1,6 @@
+/**
+ * Class to configure security of app
+ */
 package com.team.planopedia;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +20,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
     
+    /**
+     * this method configures the authentication behavior of app
+     * @param http
+     * @throws Exception 
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        
         http.authorizeRequests()
                 //.antMatchers("/user").hasRole("USER") //ADD RESTRICTED ROUTES HERE
                 .antMatchers("/").permitAll()
@@ -37,7 +46,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         
 
     }
-    
+    /**
+     * Callback function to handle login behavior
+     * @return 
+     */
     private OidcClientInitiatedLogoutSuccessHandler oidcLogoutSuccessHandler() { 
         OidcClientInitiatedLogoutSuccessHandler successHandler = new OidcClientInitiatedLogoutSuccessHandler(clientRegistrationRepository);
         successHandler.setPostLogoutRedirectUri("/");

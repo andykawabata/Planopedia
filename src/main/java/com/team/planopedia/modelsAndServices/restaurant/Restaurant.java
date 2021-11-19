@@ -1,3 +1,4 @@
+
 package com.team.planopedia.modelsAndServices.restaurant;
 
 import com.team.planopedia.modelsAndServices.restaurant.BasicInfo.BasicInfo;

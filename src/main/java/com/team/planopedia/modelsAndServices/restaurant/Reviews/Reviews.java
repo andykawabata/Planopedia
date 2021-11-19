@@ -1,6 +1,9 @@
 package com.team.planopedia.modelsAndServices.restaurant.Reviews;
 
-
+/**
+ * This object holds all data for the review section on the plan page.
+ * @author andrewkawabata
+ */
 public class Reviews {
     
     private SingleReview goodReview;

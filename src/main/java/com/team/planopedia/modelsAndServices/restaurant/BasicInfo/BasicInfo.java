@@ -4,7 +4,10 @@ import java.util.List;
 
 /**
  * Class that will contain the basic information of a plan, including name, location,
- * contact information, as well as price and user ratings.
+ * contact information, as well as price and user ratings. When constructing a restaurant object,
+ * this is the first piece. The information in this object will be used for the remaining api calls
+ * such as Weather, Directions and Reviews.
+ * 
  */
 public class BasicInfo {
 

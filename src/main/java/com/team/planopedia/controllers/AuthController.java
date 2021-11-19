@@ -26,29 +26,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+/**
+ * Controller handling all authentication endpoints
+ * @author andrewkawabata
+ */
 @Controller
 @RequestMapping(path = "/auth")
 public class AuthController {
     
-    
+    //base url for any Oauth2 request (endpoint handled by spring)
     private static String authorizationRequestBaseUri = "oauth2/authorization";
+    
+    //map for storing the auth urls for specific Oauth services
     Map<String, String> oauth2AuthenticationUrls = new HashMap<>();
     
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
     
+    //ORM object for user
     @Autowired
     private UserRepository userRepository;
 
+    // returns login page with google url
     @GetMapping("/login-page")
     public String getLoginPage(Model model) {
-       /* Iterable<ClientRegistration> clientRegistrations = null;
-        ResolvableType type = ResolvableType.forInstance(clientRegistrationRepository).as(Iterable.class);
-        if (type != ResolvableType.NONE && ClientRegistration.class.isAssignableFrom(type.resolveGenerics()[0])) {
-            clientRegistrations = (Iterable<ClientRegistration>) clientRegistrationRepository;
-        }
-        clientRegistrations.forEach(registration -> oauth2AuthenticationUrls.put(registration.getClientName(), authorizationRequestBaseUri + "/" + registration.getRegistrationId()));
-        model.addAttribute("urls", oauth2AuthenticationUrls);*/
         final String baseUrl = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUriString();
         final String googleUrl = baseUrl + '/' + authorizationRequestBaseUri + "/google";
         oauth2AuthenticationUrls.put("Google", googleUrl);
@@ -57,6 +58,7 @@ public class AuthController {
         return "login-page";
     }
 
+    // runs on successful authentication
     @GetMapping("/success")
     public String loginSucess(@AuthenticationPrincipal OAuth2User oauthUser, HttpSession session) {
         
@@ -100,12 +102,14 @@ public class AuthController {
         return user;
     }
     
+    // onboarding page, assumes user info saved in session
     @GetMapping("/onboard")
     public String onboardPage() {
         
         return "onboard";
     }
     
+    // endpoint for after onboarding, actually saves the user and redirects to home
     @PostMapping("/register")
     public String saveUser(HttpSession session) {
         

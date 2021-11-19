@@ -24,6 +24,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * Controller handling plan creation
+ * @author andrewkawabata
+ */
 @Controller
 @RequestMapping(path = "/plan")
 public class PlanController {
@@ -37,6 +41,7 @@ public class PlanController {
     @Autowired
     UserRepository userRepository;
     
+    // Method when someone submits request for new plan
     @GetMapping("/result")
     public String result(Model model,
                          @RequestParam("city") String city,                 //This variables are obtained via GET request from form page.
@@ -44,53 +49,29 @@ public class PlanController {
                          @RequestParam("cuisine") String cuisine,
                          @RequestParam("numPeople") String numPeople, HttpSession session){
     
-        // user variable is set to User object if session exisists, else it is null
+        // get user if session exists. else assign null to user.
         Map<String, Object> userMap = (Map<String, Object>) session.getAttribute("user");
         User user = null;
         if(userMap != null){
             String userEmail = (String) userMap.get("googleEmail");
             user = userRepository.findByGoogleEmail(userEmail);
         }
-            
+        
+        // get restaurant
         Restaurant restaurant = restaurantService.generateRestaurant(city, zip, cuisine, Integer.parseInt(numPeople), user);
         if(restaurant == null){
             return "redirect:/?error=true#plan";
         }
+        // get weather
         Weather weather = weatherService.getWeatherFromZip(zip);
         
+        // session that holds latest restaurant, in case user wants to save the plan
         session.setAttribute("latestRestaurant", restaurant);
         
+        // add models to view model
         model.addAttribute("restaurant",restaurant);   //adding the Restaurant object to a model which is accessible in the HTML pages.
         model.addAttribute("weather",weather);
         
         return "result";
     }
-    
-    @GetMapping("/create-user-plan")
-    public String showUserPlanForm() {
-        return "index";
-    } 
-    
-    @GetMapping("/create-guest-plan")
-    public String showGuestPlanForm(HttpSession session) {
-        
-      
-        
-        
-        
-        return "index";
-    } 
-    
-
-
-    
-    @GetMapping("/test")
-    public String test(HttpSession session) {
-        Restaurant r = (Restaurant) session.getAttribute("latestRestaurant");
-        System.out.println(r.getBasicInfo().getFullAddress());
-        return "index";
-    } 
-    
-    
-    
 }

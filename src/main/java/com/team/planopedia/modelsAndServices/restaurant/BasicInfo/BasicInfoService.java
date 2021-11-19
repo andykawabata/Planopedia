@@ -12,25 +12,40 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+/**
+ * Service that calls the Restaurant api layer to either generate a restaurant or look up
+ * a restaurant, and store the data in a BasicInfo object. It also calls the choice algorithm system.
+ * 
+ * @author andrewkawabata
+ */
 @Service
 public class BasicInfoService {
 
-    //yelpAPIAdapter apiAdapter = new yelpAPIAdapter;
-
-    
+    /**
+     * Pulls multiple restaurants from api, and selects one to return
+     * @param city
+     * @param zip
+     * @param cuisine
+     * @param numPeople
+     * @param user
+     * @return 
+     */
     public BasicInfo chooseSingleRestaurant(String city, String zip, String cuisine, int numPeople, User user){
         
         RestaurantApiAdapter api = new RestaurantApiAdapter();
-        int numRestaurants = 40;
+        int numRestaurants = 40; // max entries pulled from api
         
         ArrayList<Map<String, String>> potentialRestaurants = api.getRestaurants(cuisine, city, numRestaurants);
         Map<String, String> chosenRestaurant;
         
+        //if user not logged in, choose restaurant randomly
         if(user == null){
              chosenRestaurant = pickRandomRestaurantFromList(potentialRestaurants);
         }else{
+            // if user logged in, use choiceMaker algorithm
             ChoiceMaker choiceMaker = new ChoiceMaker();
             chosenRestaurant = choiceMaker.makeDecision(user, potentialRestaurants);
+            // if choiceMaker wasn't able to return anything, fallback on random
             if(chosenRestaurant == null){
                 chosenRestaurant = pickRandomRestaurantFromList(potentialRestaurants);
             }
@@ -52,6 +67,12 @@ public class BasicInfoService {
 
     }
     
+    /**
+     * Method that takes zip and restaurant Name and pulls first matching entry from api
+     * @param restaurantName
+     * @param zip
+     * @return 
+     */
     public BasicInfo getRestaurantByName(String restaurantName, String zip){
         
        RestaurantApiAdapter api = new RestaurantApiAdapter();
@@ -72,16 +93,16 @@ public class BasicInfoService {
 
     }
     
+    // picks random restaurant from list
     public static Map<String, String> pickRandomRestaurantFromList(List<Map<String, String>> potentialRestaurants){
         
         int n = potentialRestaurants.size();
         if(n == 0){ return null; }
         int randIndex = (int) ((Math.random() *  (n)));
-        System.out.println(n);
-        System.out.println(randIndex);
         return potentialRestaurants.get(randIndex);
     }
     
+    //puts category names into list
     private List<String> parseCategoryNames(String catString){
         List<String> catList = new ArrayList<>();
         String[] catArr = catString.split("'categorySeparator'");
