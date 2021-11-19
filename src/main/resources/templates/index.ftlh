@@ -218,22 +218,6 @@
                         <div class="single-team wow fadeInUp" data-wow-delay=".2s">
                             <div class="image">
                                 <img src="assets/img/team/team-6/AndyKawabata.jpg" alt="">
-                                <div class="overlay">
-                                    <ul class="socials">
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
                             <div class="info">
                                 <h6>Andrew Kawabata</h6>
@@ -245,22 +229,6 @@
                         <div class="single-team wow fadeInUp" data-wow-delay=".4s">
                             <div class="image">
                                 <img src="assets/img/team/team-6/MichaelLeonard.jpg" alt="">
-                                <div class="overlay">
-                                    <ul class="socials">
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
                             </div>
                             <div class="info">
                                 <h6>Michael Leonard</h6>
@@ -271,23 +239,7 @@
                     <div class="col-xl-3 col-md-6 col-sm-10">
                         <div class="single-team wow fadeInUp" data-wow-delay=".6s">
                             <div class="image">
-                                <img src="assets/img/team/team-6/DanLuo.jpg" alt="">
-                                <div class="overlay">
-                                    <ul class="socials">
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <img src="assets/img/team/team-6/DanLuo0.jpg" alt="">                             
                             </div>
                             <div class="info">
                                 <h6>Dan Luo</h6>
@@ -299,22 +251,7 @@
                         <div class="single-team wow fadeInUp" data-wow-delay=".8s">
                             <div class="image">
                                 <img src="assets/img/team/team-6/NimraSami.jpg" alt="">
-                                <div class="overlay">
-                                    <ul class="socials">
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
+     
                             </div>
                             <div class="info">
                                 <h6>Nimra Sami</h6>
@@ -326,22 +263,7 @@
                         <div class="single-team wow fadeInUp" data-wow-delay=".8s">
                             <div class="image">
                                 <img src="assets/img/team/team-6/ArturoSerdan0.jpg" alt="">
-                                <div class="overlay">
-                                    <ul class="socials">
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                 
                             </div>
                             <div class="info">
                                 <h6>Arturo Serdan</h6>
@@ -353,22 +275,7 @@
                         <div class="single-team wow fadeInUp" data-wow-delay=".8s">
                             <div class="image">
                                 <img src="assets/img/team/team-6/JeffWilliams0.jpg" alt="">
-                                <div class="overlay">
-                                    <ul class="socials">
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                             
                             </div>
                             <div class="info">
                                 <h6>Jeff Williams</h6>
